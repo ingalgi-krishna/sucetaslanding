@@ -1,0 +1,123 @@
+/* Global styling */
+
+/* Universal Heading and Text Styling */
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  color: var(--white); /* Ensures readability across all text elements */
+}
+
+
+
+/* Products Section */
+.products-section {
+  padding: 20px;
+  background-color: var(--black);
+}
+
+.products-section h3 {
+  font-size: 2rem;
+}
+
+.product-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-badge {
+  background-color: rgba(152, 138, 181, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  width: 40%;
+  margin: 10px;
+  text-align: center;
+  color: var(--white);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(30, 25, 39, 0.1);
+}
+
+.product-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.product-badge p {
+  font-size: 0.9rem;
+  color: var(--lavendar);
+}
+
+/* Services Section */
+.services-section {
+  padding: 20px;
+  background-color: var(--black);
+}
+
+.services-section h3 {
+  font-size: 2rem;
+}
+
+.service-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-badge {
+  background-color: rgba(152, 138, 181, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  flex: 1 1 calc(33.33% - 40px);
+  margin: 10px;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(30, 25, 39, 0.1);
+}
+
+.service-badge h4 {
+  font-size: 1.2rem;
+}
+
+.service-badge p {
+  font-size: 0.9rem;
+  color: var(--lavendar);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 4rem; /* Adjusts size for smaller screens */
+  }
+
+  .tagline {
+    font-size: 2rem;
+  }
+
+  .product-badge,
+  .service-badge {
+    width: 80%; /* Ensures full width use on smaller screens */
+    max-width: none; /* Removes max-width restriction */
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .company-name {
+    font-size: 5rem; /* Adjusts font size for intermediate devices */
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+}

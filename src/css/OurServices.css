@@ -1,0 +1,95 @@
+/* Services Section */
+
+.services-section {
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+  background-color: var(--black); /* Updated to black background */
+}
+
+.services-section h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--white); /* Updated to white text for contrast */
+}
+
+.service-badges {
+  display: flex;
+  justify-content: center; /* Center badges */
+  flex-wrap: wrap; /* Allow wrapping of badges */
+  gap: 20px; /* Ensure equal spacing */
+}
+
+.service-badge {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(
+    152,
+    138,
+    181,
+    0.7
+  ); /* Light lavender overlay for aesthetic appeal */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1 1 calc(33.33% - 40px); /* Adjust width dynamically */
+  max-width: 300px; /* Limit max width */
+  margin: 10px;
+  color: var(--white); /* Text color updated to white for readability */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(30, 25, 39, 0.2); /* Adjusted hover effect with a darker shadow for more definition */
+}
+
+.service-badge h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--white); /* Updated to white text */
+}
+
+.service-badge p {
+  font-size: 0.9rem;
+  color: var(
+    --lavendar
+  ); /* Lavendar for descriptions to differentiate from main text */
+}
+
+/* Responsive Design for Services Section */
+
+/* Smartphones (small screens) */
+@media (max-width: 480px) {
+  .service-badge {
+    width: 100%; /* Ensure full width on small screens */
+    margin: 10px 0;
+  }
+
+  .service-badges {
+    flex-direction: column; /* Stack badges vertically */
+    align-items: center; /* Center the badges horizontally */
+    gap: 20px; /* Maintain spacing between badges */
+  }
+}
+
+/* Tablets (medium screens) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .service-badge {
+    width: 45%; /* Display in a grid, two per row */
+  }
+
+  .service-badges {
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap to display two badges per row */
+  }
+}
+
+/* Desktop (large screens) */
+@media (min-width: 769px) {
+  .service-badge {
+    flex: 1 1 30%; /* Three badges in a row on desktop */
+  }
+}

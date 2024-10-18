@@ -1,0 +1,118 @@
+/* General footer styling */
+.footer-container {
+  /* height: 100px; */
+  /* background-color: aqua; */
+  margin-top: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack content and icons vertically on smaller screens */
+  justify-content: space-between;
+  /* background-color: var(--black); */
+  align-items: center;
+}
+
+/* Footer bottom section (company, CIN, contact) */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Company name and year */
+.footer-company {
+  font-size: 1.2rem;
+  color: var(--purple); /* Dominant color for company name */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* CIN line */
+.footer-cin {
+  font-size: 0.8rem;
+  color: var(--lavendar); /* Using lavendar for less important text */
+  margin-bottom: 10px;
+}
+
+/* Contact details line */
+.footer-contact {
+  font-size: 0.9rem;
+  color: var(--white); /* Updated for visibility on dark background */
+}
+
+/* HR (divider) */
+hr {
+  border: 0;
+  height: 2px;
+  background-color: var(--lavendar); /* Using lavendar as a subtle divider */
+}
+
+/* General paragraph styling in footer */
+.footer-bottom p {
+  margin: 0;
+  color: var(--white); /* Ensuring readability */
+}
+
+/* Social Media Icons Styling */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px; /* Add space between content and icons */
+}
+
+.footer-social a {
+  color: var(--purple);
+  font-size: 1.5rem; /* Slightly larger icons */
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--white); /* Changes icon color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center; /* Center content */
+  }
+
+  .footer-bottom {
+    text-align: center; /* Center text */
+  }
+
+  .footer-social {
+    margin-top: 20px; /* Ensure space between content and icons */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+  }
+
+  .footer-social {
+    flex-direction: row; /* Icons in a row */
+    justify-content: center;
+    margin-top: 20px; /* Space between content and icons */
+    order: 2; /* Move to bottom */
+  }
+
+  .footer-bottom {
+    order: 1; /* Ensure content stays above icons */
+  }
+
+  .footer-company {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .footer-cin {
+    font-size: 0.7rem; /* Adjust font size */
+  }
+
+  .footer-contact {
+    font-size: 0.8rem; /* Adjust font size */
+  }
+}

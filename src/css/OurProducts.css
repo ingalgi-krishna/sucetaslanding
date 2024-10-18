@@ -1,0 +1,83 @@
+/* Products Section */
+
+.products-section {
+  font-family: "Raleway", sans-serif;
+  margin: 20px;
+  background-color: var(--black); /* Updated to black background */
+}
+
+.products-section h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--white); /* Updated to white text for contrast */
+}
+
+.product-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-badge {
+  background-color: rgba(
+    152,
+    138,
+    181,
+    0.7
+  ); /* Light lavendar background for badges */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 40%;
+  margin: 10px;
+  color: var(--white); /* Text color updated to white for readability */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle hover effect, adjusted the shadow color for better visibility */
+}
+
+.product-logo-center {
+  display: block;
+  margin: 0 auto 10px;
+  width: 80px; /* Adjust logo size */
+}
+
+.product-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white); /* Text color updated to white */
+}
+
+.product-badge p {
+  font-size: 0.9rem;
+  color: var(--lavendar); /* Text color for descriptions updated to lavendar */
+}
+
+/* Responsive Design for Products Section */
+
+/* Smartphones (small screens) */
+@media (max-width: 480px) {
+  .product-badge {
+    width: 100%; /* Ensure full width on small screens */
+    margin: 10px 0;
+  }
+}
+
+/* Tablets (medium screens) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .product-badge {
+    width: 45%; /* Display in a grid, two per row */
+  }
+}
+
+/* Desktop (large screens) */
+@media (min-width: 769px) {
+  .product-badge {
+    flex: 1 1 30%; /* Three badges in a row on desktop */
+  }
+}

@@ -1,0 +1,96 @@
+.header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5% 1.5rem;
+  box-sizing: border-box;
+  overflow: hidden; /* Ensures that the pseudo-element stays within bounds */
+}
+
+/* Background Blur applied through ::before */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensures the background stays behind the content */
+  background: linear-gradient(rgba(30, 25, 39, 0.7), rgba(30, 25, 39, 0.7)),
+    url("/background.jpg"); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(10px); /* This applies the blur to the background image */
+}
+
+/* Styling for the company name and tagline */
+.company-name {
+  font-size: 2rem; /* Scalable size for better readability */
+  color: var(--white); /* High contrast against the blurred background */
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.company-name:hover {
+  letter-spacing: 0em;
+  color: var(--purple); /* Subtle color change to purple on hover */
+}
+
+.tagline {
+  font-size: 1rem; /* Readable size for subtitles */
+  color: var(--lavendar); /* Soft lavender color */
+  font-weight: 600;
+  margin-top: 0px; /* No extra space above the tagline */
+  opacity: 0.6; /* Slightly faded for aesthetic purposes */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tagline:hover {
+  opacity: 1;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 480px) {
+  .header {
+    padding: 10% 1.5rem; /* Adjusted padding for small screens */
+  }
+
+  .company-name {
+    font-size: 2rem; /* Smaller font for smaller screens */
+  }
+
+  .tagline {
+    font-size: 1rem; /* Adjusted tagline font size */
+    margin-top: 0.5em;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .company-name {
+    font-size: 2.5rem; /* Intermediate size for tablets */
+  }
+
+  .tagline {
+    font-size: 1.25rem; /* Adjusted for medium devices */
+  }
+}
+
+@media (min-width: 769px) {
+  .company-name {
+    font-size: 4.5rem; /* Larger font size for larger screens */
+  }
+
+  .tagline {
+    font-size: 1.2rem; /* Larger tagline for larger screens */
+  }
+}
