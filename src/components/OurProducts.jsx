@@ -1,51 +1,79 @@
 import React from "react";
-import "../css/OurProducts.css"; // Ensure you have the CSS for Our Products section
+import "../css/OurProducts.css"; // Link to your updated CSS file
 
-const OurProducts = () => {
+const DunefoxPage = () => {
   return (
-    <section className="products-section">
-      {/* Section Heading */}
-      <div className="product-header">
-        <h1>Our Product</h1>
-        <p>
-          Explore Dunefox, our all-in-one AI solution designed to revolutionize
-          how businesses interact with customers and grow through data-driven
-          insights.
+    <section className="products-page">
+      <div className="products-header">
+        <h1>Our Products</h1>
+      </div>
+
+      {/* Dunefox Overview */}
+      <div className="dunefox-overview">
+        <h2 className="dunefox-title">Dunefox</h2>
+        <p className="dunefox-description">
+          Dunefox is an AI-powered platform designed to transform businesses by
+          offering intelligent chatbots, WhatsApp bots, callbots, and advanced
+          data insights.
         </p>
       </div>
 
-      <div className="product-details">
-        {/* Dunefox Badge */}
-        <div className="product-badge">
-          <img src="logo.png" alt="Dunefox Logo" className="product-logo" />
-          <h2 className="product-name">Dunefox</h2>
-          <p className="product-description">
-            Dunefox offers advanced AI-powered tools, including chatbots,
-            WhatsApp bots, and callbots, along with powerful data analytics to
-            help businesses grow efficiently.
-          </p>
-
-          {/* Key Features */}
-          <div className="product-features">
-            <h3>Key Features</h3>
-            <ul>
-              <li>AI Chatbot for 24/7 customer engagement</li>
-              <li>WhatsApp Chatbot for instant messaging automation</li>
-              <li>Callbot to automate voice interactions</li>
-              <li>Data insights and analytics to fuel business growth</li>
-            </ul>
+      {/* Feature 1: AI Chatbot */}
+      <div className="dunefox-feature feature-with-overlay">
+        <div className="image-wrapper">
+          <img src="dunefox.jpg" alt="AI Chatbot" className="feature-image" />
+          <div className="text-overlay">
+            <h2>AI Chatbot</h2>
+            <p>
+              Provide round-the-clock customer service with our intelligent AI
+              chatbot.
+            </p>
           </div>
+        </div>
+      </div>
 
-          {/* Call to Action */}
-          <div className="cta">
-            <a
-              href="https://dunefox.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button"
-            >
-              Learn More about Dunefox
-            </a>
+      {/* Feature 2: WhatsApp Chatbot */}
+      <div className="dunefox-feature feature-with-overlay">
+        <div className="image-wrapper">
+          <img
+            src="dunefox.jpg"
+            alt="WhatsApp Chatbot"
+            className="feature-image"
+          />
+          <div className="text-overlay">
+            <h2>WhatsApp Chatbot</h2>
+            <p>Instantly engage with customers using WhatsApp automation.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Feature 3: Callbot (Coming Soon) */}
+      <div className="dunefox-feature feature-with-overlay coming-soon">
+        <div className="image-wrapper">
+          <img src="dunefox.jpg" alt="Callbot" className="feature-image" />
+          <div className="text-overlay">
+            <h2>Callbot</h2>
+            <p>
+              Automated voice-based interactions to streamline customer service.
+            </p>
+            <div className="coming-soon-badge">Coming Soon</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Feature 4: Data Insights */}
+      <div className="dunefox-feature feature-with-overlay">
+        <div className="image-wrapper">
+          <img
+            src="dunefox.jpg"
+            alt="Data Insights"
+            className="feature-image"
+          />
+          <div className="text-overlay">
+            <h2>Data Insights</h2>
+            <p>
+              Leverage data-driven insights to make informed business decisions.
+            </p>
           </div>
         </div>
       </div>
@@ -53,4 +81,4 @@ const OurProducts = () => {
   );
 };
 
-export default OurProducts;
+export default DunefoxPage;

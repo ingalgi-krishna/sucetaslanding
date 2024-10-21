@@ -1,186 +1,275 @@
-/* Products Section */
-.products-section {
+/* Main Products Page Styling */
+.products-page {
   font-family: "Raleway", sans-serif;
+  color: var(--white);
+  background-color: var(--black); /* Black background for consistency */
   padding: 4rem 2rem;
-  margin: 20px;
-  background-color: var(--black); /* Updated to black background */
-  color: var(--white); /* White text for contrast */
 }
 
-/* Header Styling */
-.product-header {
+.products-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.products-header h1 {
+  font-size: 3rem;
+  color: var(--white); /* White text for header */
+}
+
+/* Dunefox Overview Section */
+.dunefox-overview {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.product-header h1 {
+.dunefox-title {
   font-size: 3rem;
-  color: var(--purple); /* Purple for emphasis */
+  color: var(--purple); /* Purple for the title */
+  margin-bottom: 1rem;
 }
 
-.product-header p {
+.dunefox-description {
   font-size: 1.2rem;
-  color: var(--lavendar); /* Lavender for a soft, descriptive touch */
+  color: var(--lavendar); /* Lavender for softer text */
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto; /* Center without extra vertical margin */
+  margin-bottom: 2rem; /* Reduce the bottom margin */
 }
 
-/* Product Badges (used for Dunefox currently) */
-.product-details {
+/* Section Styling for Each Dunefox Feature */
+.dunefox-section {
+  margin-bottom: 4rem;
+  position: relative;
+  padding: 5% 1.5rem;
+}
+
+.dunefox-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(rgba(30, 25, 39, 0.7), rgba(30, 25, 39, 0.7));
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px); /* Blur effect like the theme */
+}
+
+/* Flexbox layout for content */
+.dunefox-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 2rem;
+  z-index: 1;
 }
 
-/* Individual Badge Styling */
-.product-badge {
-  background-color: rgba(152, 138, 181, 0.7); /* Light lavender background */
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  width: 40%;
-  margin: 10px;
-  color: var(--white); /* Text color for readability */
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Left-Right Alternating Styles */
+.left-content .text-content {
+  order: 1; /* Text on the left */
 }
 
-.product-badge:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle hover effect */
+.left-content .image-content {
+  order: 2; /* Image on the right */
 }
 
-/* Logo Centering */
-.product-logo-center {
-  display: block;
-  margin: 0 auto 10px;
-  width: 100px; /* Adjust logo size */
+.right-content .text-content {
+  order: 2; /* Text on the right */
 }
 
-.product-name {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--white); /* White for the name */
+.right-content .image-content {
+  order: 1; /* Image on the left */
+}
+
+/* Styling for Text Content */
+.text-content {
+  flex: 1;
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  color: var(--purple); /* Purple for headings */
   margin-bottom: 1rem;
 }
 
-.product-description {
+.text-content p {
   font-size: 1.2rem;
-  color: var(--lavendar); /* Softer color for the description */
-  margin-bottom: 1.5rem;
-}
-
-/* Features Section */
-.product-features {
-  text-align: left;
-  margin-top: 2rem;
-}
-
-.product-features h3 {
-  font-size: 1.5rem;
-  color: var(--purple); /* Features heading in purple */
-  margin-bottom: 1rem;
-}
-
-.product-features ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.product-features ul li {
-  font-size: 1.1rem;
   color: var(--white);
-  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
-/* Call to Action Button */
-.cta {
-  margin-top: 2rem;
+/* Styling for Image Content */
+.image-content {
+  flex: 1;
+  text-align: center;
+  position: relative; /* Ensure Coming Soon badge positioning */
 }
 
+.image-content img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Call-to-action button */
 .cta-button {
-  padding: 1rem 2rem;
-  background-color: var(--purple);
+  padding: 15px 30px;
+  font-size: 1.25rem;
   color: var(--white);
+  background-color: var(--purple); /* CTA button color */
   border: none;
   border-radius: 5px;
-  text-decoration: none;
-  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .cta-button:hover {
   background-color: var(--dark-purple); /* Darker on hover */
 }
 
-/* Responsive Design for Product Section */
+/* Coming Soon Badge Styling for Callbot */
+.coming-soon-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--purple); /* Using your purple theme */
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
 
-/* Smartphones (small screens) */
-@media (max-width: 480px) {
-  .product-badge {
-    width: 100%; /* Full width on small screens */
-    margin: 10px 0;
+/* Optional: Make Callbot description look slightly different */
+.coming-soon .text-content p {
+  opacity: 0.8;
+  color: var(--lavendar); /* Softer color to signify it's in development */
+}
+
+/* Feature Section with Overlapping Text */
+.feature-with-overlay .image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.feature-with-overlay .feature-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Overlay */
+.feature-with-overlay .text-overlay {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.85
+  ); /* Semi-transparent white background */
+  color: var(--black); /* Dark text for contrast */
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 40%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-with-overlay .text-overlay h2 {
+  font-size: 1.8rem;
+  color: var(--purple); /* Use purple for headings */
+  margin-bottom: 1rem;
+}
+
+.feature-with-overlay .text-overlay p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+/* Responsive Styling for Overlapping Text */
+@media (max-width: 768px) {
+  .feature-with-overlay .text-overlay {
+    top: 10%;
+    left: 5%;
+    max-width: 90%;
   }
 
-  .product-logo-center {
-    width: 80px; /* Smaller logo for mobile screens */
-  }
-
-  .product-name {
+  .feature-with-overlay .text-overlay h2 {
     font-size: 1.5rem;
   }
 
-  .product-description {
-    font-size: 1rem;
-  }
-
-  .product-features h3 {
-    font-size: 1.3rem;
-  }
-
-  .product-features ul li {
-    font-size: 1rem;
+  .feature-with-overlay .text-overlay p {
+    font-size: 0.9rem;
   }
 }
 
-/* Tablets (medium screens) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .product-badge {
-    width: 45%; /* Two badges per row */
+/* Responsive Design for Coming Soon Badge */
+@media (max-width: 480px) {
+  .coming-soon-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .dunefox-content {
+    flex-direction: column; /* Stack the content on smaller screens */
+    text-align: center;
   }
 
-  .product-logo-center {
-    width: 90px; /* Slightly larger for tablets */
+  .dunefox-content .text-content,
+  .dunefox-content .image-content {
+    order: 1; /* Reset order for mobile */
   }
 
-  .product-name {
-    font-size: 1.8rem;
+  .image-content {
+    margin-top: 2rem;
   }
 
-  .product-description {
+  .text-content h2 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
     font-size: 1.1rem;
   }
 }
 
-/* Desktop (large screens) */
-@media (min-width: 769px) {
-  .product-badge {
-    flex: 1 1 30%; /* Three badges in a row for desktop */
+@media (max-width: 480px) {
+  .text-content h2 {
+    font-size: 1.8rem;
   }
 
-  .product-logo-center {
-    width: 100px; /* Standard logo size for desktop */
+  .text-content p {
+    font-size: 1rem;
   }
 
-  .product-name {
-    font-size: 2rem;
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 
-  .product-description {
-    font-size: 1.2rem;
+  .image-content img {
+    max-width: 100%;
   }
+}
 
-  .product-features h3 {
-    font-size: 1.5rem;
-  }
+/* Color Variables */
+:root {
+  --purple: #5a40de;
+  --lavendar: #988ab5;
+  --white: #fcf7ff;
+  --black: #1e1927;
+  --dark-purple: #3e2ca3; /* Slightly darker purple for hover */
 }
