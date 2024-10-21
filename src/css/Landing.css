@@ -3,13 +3,12 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   padding: 5% 1.5rem;
   box-sizing: border-box;
-  overflow: hidden; /* Ensures that the pseudo-element stays within bounds */
+  /* background-color: var(--black);  */
+  overflow: hidden;
 }
 
 /* Background Blur applied through ::before */
@@ -20,77 +19,124 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ensures the background stays behind the content */
-  background: linear-gradient(rgba(30, 25, 39, 0.7), rgba(30, 25, 39, 0.7)),
-    url("/background.jpg"); /* Path to your background image */
+  z-index: -1;
+  /* background: linear-gradient(rgba(30, 25, 39, 0.7), rgba(30, 25, 39, 0.7)),
+    url("background.jpg"); */
+  background-color: #000000;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(10px); /* This applies the blur to the background image */
+  filter: blur(12px); /* Applies the blur to the background image */
 }
 
-/* Styling for the company name and tagline */
-.company-name {
-  font-size: 2rem; /* Scalable size for better readability */
-  color: var(--white); /* High contrast against the blurred background */
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
-  cursor: pointer;
-  margin-bottom: 10px;
+/* Content Wrapper for two-column layout */
+.content-wrapper {
+  display: flex;
+  width: 90%; /* Flex container for layout */
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem; /* Add some spacing between the sections */
 }
 
-.company-name:hover {
-  letter-spacing: 0em;
-  color: var(--purple); /* Subtle color change to purple on hover */
+/* Left section for the headline */
+.headline-section {
+  flex: 1;
+  padding-right: 2rem; /* Add padding from the center line */
 }
 
-.tagline {
-  font-size: 1rem; /* Readable size for subtitles */
-  color: var(--lavendar); /* Soft lavender color */
+.headline {
+  font-size: 4.5rem; /* Large font for headline */
   font-weight: 600;
-  margin-top: 0px; /* No extra space above the tagline */
-  opacity: 0.6; /* Slightly faded for aesthetic purposes */
-  transition: opacity 0.3s ease-in-out;
+  color: var(--white); /* White text for high contrast */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-.tagline:hover {
-  opacity: 1;
+/* Gradient for the word 'AI' */
+.headline .highlight-ai {
+  background: linear-gradient(
+    142.6deg,
+    rgb(81, 67, 203) 5.3%,
+    rgb(230, 122, 122) 95.4%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
-/* Responsive Design Adjustments */
+/* Right section for subheadline without an actual box */
+.subheadline-section {
+  flex: 1;
+  padding-left: 5rem; /* Padding from the center line */
+  border-left: 2px solid rgba(255, 255, 255, 0.2); /* Vertical line separating sections */
+}
+
+.subheadline {
+  font-size: 1.25rem;
+  color: var(--white); /* Lavender color for text */
+  opacity: 0.85;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Call-to-action button */
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  color: var(--white);
+  background-color: var(--purple); /* CTA button color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: var(--dark-purple); /* Darker on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack the headline and subheadline on smaller screens */
+    align-items: flex-start;
+  }
+
+  .headline {
+    font-size: 4rem;
+  }
+
+  .subheadline-section {
+    margin-top: 1.5rem;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .subheadline {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 480px) {
-  .header {
-    padding: 10% 1.5rem; /* Adjusted padding for small screens */
+  .headline {
+    font-size: 3rem;
   }
 
-  .company-name {
-    font-size: 2rem; /* Smaller font for smaller screens */
+  .subheadline {
+    font-size: 1rem;
   }
 
-  .tagline {
-    font-size: 1rem; /* Adjusted tagline font size */
-    margin-top: 0.5em;
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-  .company-name {
-    font-size: 2.5rem; /* Intermediate size for tablets */
-  }
-
-  .tagline {
-    font-size: 1.25rem; /* Adjusted for medium devices */
-  }
-}
-
-@media (min-width: 769px) {
-  .company-name {
-    font-size: 4.5rem; /* Larger font size for larger screens */
-  }
-
-  .tagline {
-    font-size: 1.2rem; /* Larger tagline for larger screens */
-  }
+/* Color Variables */
+:root {
+  --purple: #5a40de;
+  --lavendar: #988ab5;
+  --white: #fcf7ff;
+  --black: #1e1927;
+  --dark-purple: #3e2ca3; /* Slightly darker purple for hover */
 }
