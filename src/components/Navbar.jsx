@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/Navbar.css";
+import "../css/Navbar.css"; // Ensure the CSS path is correct
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,47 +9,49 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  // Close the menu specifically (used when clicking on nav items)
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <a href="#home" className="navbar-logo">
           Sucetas
         </a>
-
+        {/* Toggle menu icon */}
+        <div className="navbar-toggle" onClick={toggleMenu}>
+          {isOpen ? (
+            <span className="icon-close">&#10005;</span>
+          ) : (
+            <span className="icon-menu">&#9776;</span>
+          )}
+        </div>
         {/* Navbar menu */}
         <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
-          <ul className="navbar-list">
-            <li className="navbar-item">
-              <a href="#home" className="navbar-link" onClick={toggleMenu}>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a href="#home" className="nav-link" onClick={closeMenu}>
                 Home
               </a>
             </li>
-            <li className="navbar-item">
-              <a href="#about" className="navbar-link" onClick={toggleMenu}>
+            <li className="nav-item">
+              <a href="#about" className="nav-link" onClick={closeMenu}>
                 About Us
               </a>
             </li>
-            <li className="navbar-item">
-              <a href="#products" className="navbar-link" onClick={toggleMenu}>
+            <li className="nav-item">
+              <a href="#products" className="nav-link" onClick={closeMenu}>
                 Our Products
               </a>
             </li>
-            <li className="navbar-item">
-              <a href="#services" className="navbar-link" onClick={toggleMenu}>
+            <li className="nav-item">
+              <a href="#services" className="nav-link" onClick={closeMenu}>
                 Our Services
               </a>
             </li>
           </ul>
-          <hr />
-        </div>
-
-        {/* Hamburger / Cross icon */}
-        <div className="navbar-hamburger" onClick={toggleMenu}>
-          {isOpen ? (
-            <span className="cross-icon">&#10005;</span> // Cross icon
-          ) : (
-            <span className="hamburger-icon">&#9776;</span> // Hamburger icon
-          )}
         </div>
       </div>
     </nav>

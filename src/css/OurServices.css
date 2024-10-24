@@ -1,95 +1,120 @@
-/* Services Section */
-
+/* Our Services Section Styling */
 .services-section {
   font-family: "Raleway", sans-serif;
-  padding: 20px;
-  background-color: var(--black); /* Updated to black background */
-}
-
-.services-section h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  color: var(--white); /* Updated to white text for contrast */
+  background-color: #000; /* Ensuring the background is black */
+  color: var(--white);
+  padding: 4rem;
+  text-align: center;
 }
 
 .service-badges {
   display: flex;
-  justify-content: center; /* Center badges */
-  flex-wrap: wrap; /* Allow wrapping of badges */
-  gap: 20px; /* Ensure equal spacing */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adequate spacing between each badge */
 }
 
 .service-badge {
+  position: relative;
+  width: 300px;
+  height: 400px;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.service-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.8)
+  ); /* Dark gradient for readability */
+  border-radius: 8px;
+}
+
+.service-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
   background-color: rgba(
-    152,
-    138,
-    181,
-    0.7
-  ); /* Light lavender overlay for aesthetic appeal */
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  flex: 1 1 calc(33.33% - 40px); /* Adjust width dynamically */
-  max-width: 300px; /* Limit max width */
-  margin: 10px;
-  color: var(--white); /* Text color updated to white for readability */
-  transition: transform 0.3s, box-shadow 0.3s;
+    255,
+    255,
+    255,
+    0.85
+  ); /* Semi-transparent white background */
+  border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
+  height: 200px; /* Increased height for more content */
 }
 
-.service-badge:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(30, 25, 39, 0.2); /* Adjusted hover effect with a darker shadow for more definition */
+.service-info h4 {
+  margin: 0;
+  color: var(--purple); /* Theme purple color for titles */
+  font-size: 1.2rem; /* Slightly larger font for titles */
 }
 
-.service-badge h4 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: var(--white); /* Updated to white text */
+.service-info p {
+  margin: 10px 0;
+  color: var(--black); /* Ensuring text is readable on light background */
+  font-size: 0.9rem; /* Slightly smaller font size for text */
 }
 
-.service-badge p {
-  font-size: 0.9rem;
-  color: var(
-    --lavendar
-  ); /* Lavendar for descriptions to differentiate from main text */
+.know-more-btn {
+  background: none;
+  border: none;
+  color: var(--purple);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  float: right;
+  font-size: 1rem;
+  display: block; /* Ensures it is treated as a block-level element */
+  text-align: right; /* Aligns text to the right */
+  margin-top: 20px; /* Provides top margin for spacing */
 }
 
-/* Responsive Design for Services Section */
+.know-more-btn:hover {
+  text-decoration: none; /* No underline on hover */
+  color: var(--dark-purple); /* Changes color on hover */
+}
 
-/* Smartphones (small screens) */
-@media (max-width: 480px) {
-  .service-badge {
-    width: 100%; /* Ensure full width on small screens */
-    margin: 10px 0;
-  }
-
+/* Responsive Design */
+@media (max-width: 768px) {
   .service-badges {
-    flex-direction: column; /* Stack badges vertically */
-    align-items: center; /* Center the badges horizontally */
-    gap: 20px; /* Maintain spacing between badges */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-badge {
+    width: 100%; /* Full width for better mobile view */
+    height: auto; /* Height adjusts to content */
+    margin-bottom: 20px; /* More spacing between badges */
+  }
+
+  .service-info {
+    position: static; /* Removes absolute positioning */
+    height: auto; /* Allows for flexible height */
+    padding: 10px; /* Less padding on smaller screens */
+  }
+
+  .know-more-btn {
+    margin-top: 10px; /* Ensures consistent spacing */
+    text-align: center; /* Center aligns the button for better mobile experience */
   }
 }
 
-/* Tablets (medium screens) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .service-badge {
-    width: 45%; /* Display in a grid, two per row */
-  }
-
-  .service-badges {
-    justify-content: center;
-    flex-wrap: wrap; /* Wrap to display two badges per row */
-  }
-}
-
-/* Desktop (large screens) */
-@media (min-width: 769px) {
-  .service-badge {
-    flex: 1 1 30%; /* Three badges in a row on desktop */
-  }
+/* Color Variables */
+:root {
+  --purple: #5a40de;
+  --dark-purple: #3e2ca3;
+  --white: #ffffff;
+  --black: #1e1927;
 }

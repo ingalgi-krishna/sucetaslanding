@@ -19,7 +19,7 @@ const Landing = () => {
             <br />
             Empower your business with cutting-edge AI solutions.
           </p>
-          <button className="cta-button">See what we offer</button>
+          <button className="cta-button">See what we offer ** </button>
         </div>
       </div>
     </header>

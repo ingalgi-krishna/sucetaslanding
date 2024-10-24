@@ -2,7 +2,7 @@
 .products-page {
   font-family: "Raleway", sans-serif;
   color: var(--white);
-  background-color: var(--black); /* Black background for consistency */
+  background-color: #000 !important; /* Ensure black background */
   padding: 4rem 2rem;
 }
 
@@ -33,8 +33,8 @@
   color: var(--lavendar); /* Lavender for softer text */
   line-height: 1.6;
   max-width: 80%;
-  margin: 0 auto; /* Center without extra vertical margin */
-  margin-bottom: 2rem; /* Reduce the bottom margin */
+  margin: 0 auto; /* Centered content */
+  margin-bottom: 2rem;
 }
 
 /* Section Styling for Each Dunefox Feature */
@@ -56,7 +56,7 @@
   background-color: #000;
   background-size: cover;
   background-position: center;
-  filter: blur(12px); /* Blur effect like the theme */
+  filter: blur(12px);
 }
 
 /* Flexbox layout for content */
@@ -92,7 +92,7 @@
 
 .text-content h2 {
   font-size: 2.5rem;
-  color: var(--purple); /* Purple for headings */
+  color: var(--purple);
   margin-bottom: 1rem;
 }
 

@@ -1,14 +1,18 @@
 import React from "react";
 import Navbar from "./components/Navbar"; // Import the Navbar component
-import LandingPage from "./components/LandingPage";
+import OurProducts from "./components/OurProducts";
+import OurServices from "./components/OurServices";
+import Landing from "./components/Landing";
 import Footer from "./components/Footer"; // Import the Footer component
 
 function App() {
   return (
     <div className="App">
-      <Navbar /> {/* Navbar is at the top */}
-      <LandingPage /> {/* The landing page content */}
-      <Footer /> {/* Footer is at the bottom */}
+      <Navbar />
+      <Landing />
+      <OurProducts />
+      {/* <OurServices /> */}
+      <Footer />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import "../css/OurProducts.css"; // Link to your updated CSS file
+import "../css/OurProducts.css"; // Ensure you link to your updated CSS file
 
 const DunefoxPage = () => {
   return (
     <section className="products-page">
       <div className="products-header">
-        <h1>Our Products</h1>
+        <h1>Our Product</h1>
       </div>
 
       {/* Dunefox Overview */}
@@ -22,7 +22,7 @@ const DunefoxPage = () => {
       <div className="dunefox-feature feature-with-overlay">
         <div className="image-wrapper">
           <img src="dunefox.jpg" alt="AI Chatbot" className="feature-image" />
-          <div className="text-overlay">
+          <div className="text-overlay overlay-top-left">
             <h2>AI Chatbot</h2>
             <p>
               Provide round-the-clock customer service with our intelligent AI
@@ -40,7 +40,7 @@ const DunefoxPage = () => {
             alt="WhatsApp Chatbot"
             className="feature-image"
           />
-          <div className="text-overlay">
+          <div className="text-overlay overlay-bottom-right">
             <h2>WhatsApp Chatbot</h2>
             <p>Instantly engage with customers using WhatsApp automation.</p>
           </div>
@@ -51,7 +51,7 @@ const DunefoxPage = () => {
       <div className="dunefox-feature feature-with-overlay coming-soon">
         <div className="image-wrapper">
           <img src="dunefox.jpg" alt="Callbot" className="feature-image" />
-          <div className="text-overlay">
+          <div className="text-overlay overlay-top-right">
             <h2>Callbot</h2>
             <p>
               Automated voice-based interactions to streamline customer service.
@@ -69,7 +69,7 @@ const DunefoxPage = () => {
             alt="Data Insights"
             className="feature-image"
           />
-          <div className="text-overlay">
+          <div className="text-overlay overlay-bottom-left">
             <h2>Data Insights</h2>
             <p>
               Leverage data-driven insights to make informed business decisions.
