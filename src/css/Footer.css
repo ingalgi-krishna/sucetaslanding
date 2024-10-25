@@ -1,9 +1,9 @@
 /* Base styles for all screens */
 .footer {
+  padding-top: 20px;
   background-color: #000;
   color: #fcf7ff;
-  font-family: "Arial", sans-serif;
-  padding: 2rem 1rem;
+  padding: 0rem 2rem;
   line-height: 1.6;
 }
 
@@ -43,6 +43,7 @@
 }
 
 .newsletter button {
+  border-radius: 5px;
   padding: 0.8rem 1rem;
   background-color: var(--purple);
   color: white;
@@ -83,14 +84,19 @@
   width: 50%;
 }
 .footer-bottom {
+  padding: 1rem 0;
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Aligns children elements to the sides */
+  justify-content: space-between;
   align-items: center;
   background-color: #000;
   border-top: 1px solid #988ab5;
-  padding: 1rem;
-  flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+  flex-wrap: wrap;
+}
+
+.footer-policies .separator {
+  margin: 0 10px; /* Ensure the separator has equal spacing on both sides */
+  color: inherit; /* Inherits the color from the parent for consistency */
 }
 
 .footer-bottom p {
@@ -100,16 +106,21 @@
   color: #fcf7ff;
 }
 
+.company-info p span {
+  font-weight: 600;
+}
+
 .footer-policies {
+  gap: 10px;
   order: 1; /* Ensures policies are on the left */
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex: 1; /* Takes necessary space but pushes the text to the right */
 }
 .footer-policies a {
   color: #988ab5;
   text-decoration: none;
-  margin-right: 10px; /* Space between links */
 }
 .footer-policies a:hover {
   text-decoration: underline;
@@ -130,15 +141,17 @@
   }
 
   .newsletter {
+    display: block;
     flex-direction: column; /* Stack elements vertically */
-    align-items: left;
+    /* align-items: left; */
     width: 100%;
   }
 
   .newsletter input[type="email"],
   .newsletter button {
+    border-radius: 5px;
     width: 100%;
-    margin-top: 10px; /* Remove margin between elements */
+    margin-top: 10px;
   }
 
   .footer-links {
@@ -151,8 +164,19 @@
   }
 
   .footer-bottom {
+    display: flex;
     flex-direction: column;
     text-align: center;
+  }
+  .footer-policies {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .company-info p {
+    font-size: small;
   }
 }
 

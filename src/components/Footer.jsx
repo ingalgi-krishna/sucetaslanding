@@ -50,12 +50,16 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className="footer-policies">
-          <p>
-            {" "}
-            <span>© 2024 Sucetas Technologies.</span> All rights reserved.
-          </p>
-          <a href="#terms">Terms & Conditions</a>|
-          <a href="#privacy">Privacy Policy</a>
+          <div className="policy-links">
+            <a href="#terms">Terms & Conditions</a>
+            <span className="separator">|</span>
+            <a href="#privacy">Privacy Policy</a>
+          </div>
+          <div className="company-info">
+            <p>
+              <span>© 2024 Sucetas Technologies.</span> All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
