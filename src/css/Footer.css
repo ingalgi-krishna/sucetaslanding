@@ -1,6 +1,5 @@
 /* Base styles for all screens */
 .footer {
-  padding-top: 20px;
   background-color: #000;
   color: #fcf7ff;
   padding: 0rem 2rem;
@@ -19,12 +18,13 @@
 }
 
 .footer-branding h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   color: #fcf7ff;
   margin-bottom: 0.5rem;
 }
 
 .footer-branding p {
+  margin-right: 30%;
   margin-bottom: 1rem;
 }
 
@@ -52,6 +52,7 @@
 }
 
 .footer-links {
+  padding-top: 1rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

@@ -1,0 +1,175 @@
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: max-content;
+  background-color: #b91212;
+  color: white;
+}
+
+.left-pane {
+  width: 40%;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-pane h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.left-pane p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.explore-button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background-color: #2c2c2c;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.explore-button:hover {
+  background-color: #555;
+}
+
+.right-pane {
+  width: 60%;
+  padding: 50px;
+}
+
+/* Add Flex properties to ensure badges are of equal height */
+.badge-wrapper {
+  display: flex;
+  align-items: stretch; /* Stretch badges to the same height */
+  justify-content: stretch;
+  flex-grow: 1; /* Allow equal growth */
+  padding: 15px;
+}
+
+.badge {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Spread content evenly inside */
+  background-color: #1c1c1c;
+  height: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  flex-grow: 1; /* Ensure badges grow to fill the space */
+  box-sizing: border-box;
+  min-height: 100%; /* Force badges to stretch to full height */
+}
+
+.badge-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.badge-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.badge-content p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.discover-link {
+  color: #00bfff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.discover-link:hover {
+  text-decoration: underline;
+}
+
+/* Slick Navigation Arrows */
+.slick-prev,
+.slick-next {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.slick-prev {
+  left: 15px;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 15px;
+  z-index: 1;
+}
+
+/* Slick Dots Styling */
+.slick-dots {
+  bottom: -40px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .left-pane {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .right-pane {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .carousel-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .badge-wrapper {
+    padding: 5px;
+  }
+
+  .badge {
+    width: 100%;
+  }
+
+  .left-pane h1 {
+    font-size: 1.8rem;
+  }
+
+  .left-pane p {
+    font-size: 1rem;
+  }
+
+  .explore-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .badge-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .badge-content p {
+    font-size: 0.9rem;
+  }
+}

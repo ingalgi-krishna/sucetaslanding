@@ -153,15 +153,17 @@
 
 /* Feature Section with Overlapping Text */
 .feature-with-overlay .image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
 .feature-with-overlay .feature-image {
-  width: 100%;
+  width: 50%;
   height: auto;
-  display: block;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -271,5 +273,5 @@
   --lavendar: #988ab5;
   --white: #fcf7ff;
   --black: #1e1927;
-  --dark-purple: #3e2ca3; /* Slightly darker purple for hover */
+  --dark-purple: #3e2ca3; 
 }
