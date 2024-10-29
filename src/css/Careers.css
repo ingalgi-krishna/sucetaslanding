@@ -1,0 +1,220 @@
+:root {
+  --purple: #5a40de;
+  --dark-purple: #3e2ca3;
+  --white: #ffffff;
+  --lavender: #988ab5;
+  --black: #1e1927;
+}
+
+.careers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #000; /* Black background for the entire page */
+  border-bottom: 1px solid var(--lavender);
+}
+
+.careers-banner {
+  width: 100%;
+  color: var(--white);
+  padding: 40px 20px;
+  text-align: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(123, 97, 255, 0.7),
+      rgba(220, 198, 224, 0.7)
+    ),
+    url("/path/to/your/background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.careers-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+.careers-content h2 {
+  color: #5a40de;
+  padding: 2rem 0;
+}
+
+.careers-text,
+.careers-form {
+  flex: 1;
+  padding: 20px;
+  color: var(--white); /* White text for readability */
+}
+
+.careers-text {
+  width: 50%;
+}
+
+.careers-text p span {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.careers-form {
+  font-size: small;
+  width: 50%;
+  background-color: #1c1c1c; /* Dark grey background for form */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.careers-form form {
+  display: flex;
+  flex-direction: column;
+}
+.file-input-container {
+  border: 2px dotted #ccc;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.file-input-label {
+  cursor: pointer;
+  display: block;
+  padding: 12px;
+  transition: background-color 0.3s;
+}
+
+.file-input-label i.upload-icon {
+  display: block;
+  font-size: 24px; /* Adjust size as necessary */
+  margin-bottom: 8px;
+}
+
+.file-input-label p {
+  margin-top: 8px;
+  color: #666;
+}
+
+.file-name {
+  display: block;
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.careers-form input,
+.careers-form textarea {
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #282828;
+  color: #ddd;
+}
+
+.careers-form input::placeholder,
+.careers-form textarea::placeholder {
+  font-size: 0.8rem; /* Setting a specific font size for placeholders */
+  color: #ccc; /* Light grey color for better readability */
+  opacity: 0.9; /* Ensures the placeholder is clearly visible */
+}
+
+.careers-form button {
+  font-weight: 600;
+  padding: 12px 20px;
+  background-color: #5a40de;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.careers-form button:hover {
+  background-color: #3e2ca3;
+}
+.consent-checkbox {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.consent-checkbox input[type="checkbox"] {
+  margin-right: 10px; /* Spacing between the checkbox and the label */
+}
+
+.consent-checkbox label {
+  color: #fff; /* White color for readability */
+  font-size: 0.9rem; /* Smaller font size for consent text */
+}
+.careers-form .consent-checkbox {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.careers-form .consent-checkbox input[type="checkbox"] {
+  width: 20px; /* Custom size for the checkbox */
+  height: 20px; /* Custom size for the checkbox */
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: var(--lavender); /* Custom color for the checkbox tick */
+  background-color: #282828; /* Matching the form's aesthetic */
+  border: 1px solid #5a40de; /* Border color to match your design */
+  border-radius: 4px; /* Optional: rounded corners */
+}
+
+.careers-form .consent-checkbox input[type="checkbox"]:focus {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 0 3px rgba(90, 64, 222, 0.5); /* Custom focus ring */
+}
+
+.careers-form .consent-checkbox label {
+  font-size: 0.9rem; /* Smaller font size for consent text */
+  color: #ccc; /* Light grey color for better readability */
+  flex-grow: 1; /* Ensures the label uses the remaining space */
+}
+
+@media (max-width: 768px) {
+  .careers-form .consent-checkbox {
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .careers-form .consent-checkbox label {
+    margin-top: 5px;
+    font-size: small;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-text,
+  .careers-form {
+    width: 100%;
+  }
+
+  .careers-content {
+    flex-direction: column;
+  }
+
+  .careers-banner h1 {
+    font-size: 2rem;
+  }
+
+  .careers-banner p {
+    font-size: 1.2rem;
+  }
+
+  .careers-form,
+  .careers-text {
+    padding: 15px;
+  }
+}

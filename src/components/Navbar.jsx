@@ -51,6 +51,11 @@ const Navbar = () => {
                 Our Services
               </a>
             </li>
+            <li className="nav-item">
+              <a href="#services" className="nav-link" onClick={closeMenu}>
+                <b>Let's Talk</b>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

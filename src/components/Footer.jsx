@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Footer.css"; // Ensure this is the correct path to your CSS file
+import "../css/Footer.css"; // Verify this path matches your CSS file location
 
 const Footer = () => {
   return (
@@ -19,16 +19,16 @@ const Footer = () => {
         <div className="footer-links">
           <div className="footer-column">
             <h4>Service Areas</h4>
-            <a href="#service1">Service 1</a>
-            <a href="#service2">Service 2</a>
-            <a href="#service3">Service 3</a>
+            <a href="#service1">Chatbot</a>
+            <a href="#service2">Whatsapp Bot</a>
+            <a href="#service3">Callbot</a>
           </div>
           <div className="footer-column">
             <h4>Quick Links</h4>
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
             <a href="#business">Our Business</a>
-            <a href="#careers">Careers</a>
+            <a href="/careers">Careers</a>
             <a href="#contact">Contact Us</a>
           </div>
           <div className="footer-column">
@@ -54,9 +54,13 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-policies">
           <div className="policy-links">
-            <a href="#terms">Terms & Conditions</a>
+            <a href="/terms-and-conditions" rel="noopener noreferrer">
+              Terms & Conditions
+            </a>
             <span className="separator">|</span>
-            <a href="#privacy">Privacy Policy</a>
+            <a href="/privacy-policy" rel="noopener noreferrer">
+              Privacy Policy
+            </a>
           </div>
           <div className="company-info">
             <p>
