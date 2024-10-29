@@ -13,7 +13,7 @@ import Carousel from "./components/Carousel";
 import PrivacyPolicy from "./components/Privacy";
 import TermsAndConditions from "./components/Terms";
 import Careers from "./components/Careers";
-
+import GetInTouch from "./components/GetInTouch";
 function App() {
   return (
     <Router>
@@ -28,13 +28,12 @@ function App() {
             element={<TermsAndConditions />}
           />
           <Route path="/careers" element={<Careers />} />
-
-          {/* Uncomment the following lines if these components are ready and need to be routed */}
           {/* <Route path="/our-products" element={<OurProducts />} /> */}
           {/* <Route path="/our-services" element={<OurServices />} /> */}
           {/* <Route path="/ai-page" element={<AIPage />} /> */}
           {/* <Route path="/service-carousel" element={<ServiceCarousel />} /> */}
         </Routes>
+        <GetInTouch />
         <Footer />
       </div>
     </Router>
