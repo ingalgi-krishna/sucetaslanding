@@ -36,13 +36,13 @@ const Footer = () => {
             <a href="https://linkedin.com">
               <i className="fab fa-linkedin"></i> LinkedIn
             </a>
-            <a href="https://instagram.com">
+            <a href="https://www.instagram.com/sucetas/">
               <i className="fab fa-instagram"></i> Instagram
             </a>
-            <a href="https://twitter.com">
+            <a href="https://x.com/sucetas">
               <i className="fab fa-twitter"></i> Twitter
             </a>
-            <a href="https://facebook.com">
+            <a href="https://www.facebook.com/profile.php?id=61567804626164&sk=about">
               <i className="fab fa-facebook"></i> Facebook
             </a>
             <a href="https://www.youtube.com/@Sucetas">

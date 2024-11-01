@@ -8,6 +8,7 @@
 
 .careers-container {
   display: flex;
+  padding: 2rem 5rem;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -16,16 +17,16 @@
 }
 
 .careers-banner {
+  font-size: 1.2rem;
   width: 100%;
   color: var(--white);
   padding: 40px 20px;
   text-align: center;
   background-image: linear-gradient(
-      to right,
-      rgba(123, 97, 255, 0.7),
-      rgba(220, 198, 224, 0.7)
-    ),
-    url("/path/to/your/background-image.jpg");
+    to right,
+    rgba(123, 97, 255, 0.7),
+    rgba(220, 198, 224, 0.7)
+  );
   background-size: cover;
   background-position: center;
   display: flex;
@@ -39,20 +40,19 @@
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  padding: 20px;
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 2rem 5rem;
 }
 .careers-content h2 {
   color: #5a40de;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .careers-text,
 .careers-form {
   flex: 1;
   padding: 20px;
-  color: var(--white); /* White text for readability */
+  color: var(--white);
 }
 
 .careers-text {

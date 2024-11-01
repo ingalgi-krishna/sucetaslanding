@@ -1,84 +1,74 @@
 import React from "react";
-import "../css/OurProducts.css"; // Ensure you link to your updated CSS file
+import "../css/OurProducts.css"; // Ensure the CSS file path is correct
 
-const DunefoxPage = () => {
+const DunefoxProduct = () => {
   return (
-    <section className="products-page">
-      <div className="products-header">
-        <h1>Our Product</h1>
+    <div className="dunefox-product-page">
+      <h1 className="main-title">
+        Looking to Extend Your Business Reach and Engagement? Here's what we
+        offer
+      </h1>
+      <div className="dunefox-banner">
+        <h1 className="banner-headline">Dunefox</h1>
+        <p className="banner-subtitle">It's Time, Go AI</p>
       </div>
-
-      {/* Dunefox Overview */}
-      <div className="dunefox-overview">
-        <h2 className="dunefox-title">Dunefox</h2>
-        <p className="dunefox-description">
-          Dunefox is an AI-powered platform designed to transform businesses by
-          offering intelligent chatbots, WhatsApp bots, callbots, and advanced
-          data insights.
-        </p>
-      </div>
-
-      {/* Feature 1: AI Chatbot */}
-      <div className="dunefox-feature feature-with-overlay">
-        <div className="image-wrapper">
-          <img src="dunefox.jpg" alt="AI Chatbot" className="feature-image" />
-          <div className="text-overlay overlay-top-left">
-            <h2>AI Chatbot</h2>
-            <p>
-              Provide round-the-clock customer service with our intelligent AI
-              chatbot.
-            </p>
+      <div className="content-section">
+        <div className="service-grid">
+          <div
+            className="service"
+            onClick={() =>
+              (window.location.href = "https://example.com/web-chatbots")
+            }
+          >
+            <i className="fa fa-comments" aria-hidden="true"></i>{" "}
+            {/* Icon for Web Chatbots */}
+            Web Chatbots
+          </div>
+          <div
+            className="service"
+            onClick={() =>
+              (window.location.href = "https://example.com/whatsapp-chatbots")
+            }
+          >
+            <i className="fa fa-whatsapp" aria-hidden="true"></i>{" "}
+            {/* Icon for WhatsApp Chatbots */}
+            WhatsApp Chatbots
+          </div>
+          <div
+            className="service coming-soon"
+            onClick={() => console.log("Call Bots - Coming soon")}
+          >
+            <i className="fa fa-phone" aria-hidden="true"></i>{" "}
+            {/* Icon for Call Bots */}
+            Call Bot <span className="coming-soon-badge"></span>
+          </div>
+          <div
+            className="service"
+            onClick={() =>
+              (window.location.href = "https://example.com/analytics-insights")
+            }
+          >
+            <i className="fa fa-chart-line" aria-hidden="true"></i>{" "}
+            {/* Icon for Analytics & Insights */}
+            Analytics & Insights
           </div>
         </div>
-      </div>
-
-      {/* Feature 2: WhatsApp Chatbot */}
-      <div className="dunefox-feature feature-with-overlay">
-        <div className="image-wrapper">
-          <img
-            src="dunefox.jpg"
-            alt="WhatsApp Chatbot"
-            className="feature-image"
-          />
-          <div className="text-overlay overlay-bottom-right">
-            <h2>WhatsApp Chatbot</h2>
-            <p>Instantly engage with customers using WhatsApp automation.</p>
-          </div>
+        <div className="product-details">
+          <p className="product-description">
+            Explore Dunefox, your gateway to advancing business AI solutions.
+            Drive engagement, extend your reach, and harness the power of
+            intelligent chatbots and analytics.
+          </p>
+          <button
+            className="learn-more-btn"
+            onClick={() => console.log("Navigate to learn more about Dunefox")}
+          >
+            Learn More
+          </button>
         </div>
       </div>
-
-      {/* Feature 3: Callbot (Coming Soon) */}
-      <div className="dunefox-feature feature-with-overlay coming-soon">
-        <div className="image-wrapper">
-          <img src="dunefox.jpg" alt="Callbot" className="feature-image" />
-          <div className="text-overlay overlay-top-right">
-            <h2>Callbot</h2>
-            <p>
-              Automated voice-based interactions to streamline customer service.
-            </p>
-            <div className="coming-soon-badge">Coming Soon</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Feature 4: Data Insights */}
-      <div className="dunefox-feature feature-with-overlay">
-        <div className="image-wrapper">
-          <img
-            src="dunefox.jpg"
-            alt="Data Insights"
-            className="feature-image"
-          />
-          <div className="text-overlay overlay-bottom-left">
-            <h2>Data Insights</h2>
-            <p>
-              Leverage data-driven insights to make informed business decisions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 
-export default DunefoxPage;
+export default DunefoxProduct;

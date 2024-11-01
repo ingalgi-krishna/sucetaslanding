@@ -8,10 +8,10 @@ const App = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 3, // Display 3 badges per slide
+    speed: 1000,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: true, // Enable navigation arrows
+    arrows: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -34,72 +34,96 @@ const App = () => {
     ],
   };
 
+  const services = [
+    {
+      image: "dunefox.jpg",
+      title: "Q/A Chatbot for Websites",
+      description:
+        "Enhance site engagement with our smart Q/A chatbot solutions.",
+      link: "/qa-chatbot",
+    },
+    {
+      image: "dunefox.jpg",
+      title: "Chatbot Solutions",
+      description: "Transform customer interactions with AI-driven chatbots.",
+      link: "/chatbot-solutions",
+    },
+    {
+      image: "dunefox.jpg",
+      title: "Appointment Bookings",
+      description:
+        "Streamline scheduling with our advanced booking solutions available on WhatsApp.",
+      link: "/appointment-bookings",
+    },
+    {
+      image: "dunefox.jpg",
+      title: "Product Promotion and Leads",
+      description: "Drive sales and generate leads with targeted campaigns.",
+      link: "/product-promotion",
+    },
+    {
+      image: "dunefox.jpg",
+      title: "Information Awareness and Alerts",
+      description: "Keep clients informed with automated alerts and updates.",
+      link: "/information-alerts",
+    },
+    {
+      image: "dunefox.jpg",
+      title: "Business Analytics",
+      description:
+        "Leverage data to gain strategic insights and drive informed decision-making.",
+      link: "/business-analytics",
+    },
+    {
+      image: "dunefox.jpg",
+      title: "Business Growth",
+      description: "Insights to fuel your business growth and efficiency.",
+      link: "/business-growth",
+    },
+  ];
+
   return (
     <div className="carousel-container">
-      {/* Static Left Pane */}
-      <div className="left-pane">
-        <h1>Advancing Enterprise AI</h1>
-        <p>AI Platforms from Cloud to Edge to Endpoints</p>
-        <button className="explore-button">Explore AI Solutions</button>
-      </div>
-
-      {/* Right Carousel Pane */}
-      <div className="right-pane">
-        <Slider {...settings}>
-          {/* Wrapper for each badge */}
-          <div className="badge-wrapper">
-            <div className="badge">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Badge 1"
-                className="badge-image"
-              />
-              <div className="badge-content">
-                <h3>AMD EPYC</h3>
-                <p>Performance and Efficiency for Enterprise AI</p>
-                <a href="/" className="discover-link">
-                  Discover EPYC
-                </a>
+      <h1 className="services-title">
+        Seeking Business Growth? Discover the Insights That Drive Success.
+      </h1>
+      <div className="solutions">
+        <div className="left-pane">
+          <h2>Explore Our Solutions</h2>
+          <p>
+            Empowering businesses through innovative technology solutions from
+            AI to data analytics.
+          </p>
+          <button className="explore-button">Discover all our services</button>
+        </div>
+        <div className="right-pane">
+          <Slider {...settings}>
+            {services.map((service, index) => (
+              <div key={index} className="badge-wrapper">
+                <div className="badge">
+                  <div className="badge-image-container">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="badge-image"
+                    />
+                  </div>
+                  <div className="badge-title">
+                    <h3>{service.title}</h3>
+                  </div>
+                  <div className="badge-description">
+                    <p>{service.description}</p>
+                  </div>
+                  <div className="badge-link">
+                    <a href={service.link} className="discover-link">
+                      Learn More
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div className="badge-wrapper">
-            <div className="badge">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Badge 2"
-                className="badge-image"
-              />
-              <div className="badge-content">
-                <h3>AMD Instinct</h3>
-                <p>Leadership Inference Performance</p>
-                <a href="/" className="discover-link">
-                  Discover Instinct
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="badge-wrapper">
-            <div className="badge">
-              <img
-                src="https://via.placeholder.com/150"
-                alt="Badge 3"
-                className="badge-image"
-              />
-              <div className="badge-content">
-                <h3>AMD Pensando</h3>
-                <p>Revolutionize Your AI Infrastructure</p>
-                <a href="/" className="discover-link">
-                  Discover Pensando
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Add more slides as needed */}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   );

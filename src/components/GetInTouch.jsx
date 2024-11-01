@@ -52,7 +52,7 @@ const GetInTouch = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit">SEND MESSAGE</button>
+          <button type="submit">Send Message</button>
         </form>
       </div>
       <div className="contact-info">
