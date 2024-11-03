@@ -1,41 +1,33 @@
 import React, { useState } from "react";
-import "../css/Navbar.css"; // Ensure the CSS path is correct
+import { Link } from "react-router-dom";
+import "../css/Navbar.css"; // Ensure the CSS file path is correct
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdown, setDropdown] = useState({
-    products: false,
-    solutions: false,
-    resources: false,
-  });
+  const [dropdown, setDropdown] = useState(false);
 
   // Toggle the mobile menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Toggle dropdown menus
-  const toggleDropdown = (menu) => {
-    setDropdown((prev) => ({ ...prev, [menu]: !prev[menu] }));
+  // Toggle the dropdown menu
+  const toggleDropdown = () => {
+    setDropdown((prevDropdown) => !prevDropdown);
   };
 
   // Close the menu specifically (used when clicking on nav items)
   const closeMenu = () => {
     setIsOpen(false);
-    setDropdown({
-      products: false,
-      solutions: false,
-      resources: false,
-    });
+    setDropdown(false);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="#home" className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           Sucetas
-        </a>
-        {/* Toggle menu icon */}
+        </Link>
         <div className="navbar-toggle" onClick={toggleMenu}>
           {isOpen ? (
             <span className="icon-close">&#10005;</span>
@@ -43,77 +35,52 @@ const Navbar = () => {
             <span className="icon-menu">&#9776;</span>
           )}
         </div>
-        {/* Navbar menu */}
         <div className={`navbar-menu ${isOpen ? "open" : ""}`}>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a href="#home" className="nav-link" onClick={closeMenu}>
-                Home
-              </a>
+              <Link to="/what-we-do" className="nav-link" onClick={closeMenu}>
+                What we do
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link" onClick={closeMenu}>
+              <Link to="/who-we-are" className="nav-link" onClick={closeMenu}>
                 Who we are
-              </a>
+              </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                href="#products"
+            <li className="nav-item">
+              <Link
+                to="/resources"
                 className="nav-link"
-                onClick={() => toggleDropdown("products")}
-              >
-                Products &#9662;
-              </a>
-              {dropdown.products && (
-                <div className="dropdown-content">
-                  <a href="#dunefox" onClick={closeMenu}>
-                    Dunefox
-                  </a>
-                </div>
-              )}
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                href="#solutions"
-                className="nav-link"
-                onClick={() => toggleDropdown("solutions")}
-              >
-                Solutions &#9662;
-              </a>
-              {dropdown.solutions && (
-                <div className="dropdown-content">
-                  <a href="#solution1" onClick={closeMenu}>
-                    Solution 1
-                  </a>
-                  <a href="#solution2" onClick={closeMenu}>
-                    Solution 2
-                  </a>
-                </div>
-              )}
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                href="#resources"
-                className="nav-link"
-                onClick={() => toggleDropdown("resources")}
+                onClick={toggleDropdown}
               >
                 Resources &#9662;
-              </a>
-              {dropdown.resources && (
-                <div className="dropdown-content">
-                  <a href="#docs" onClick={closeMenu}>
-                    Docs
-                  </a>
-                  <a href="#blogs" onClick={closeMenu}>
+              </Link>
+              {dropdown && (
+                <div
+                  className="dropdown-content"
+                  style={{ display: dropdown ? "block" : "none" }}
+                >
+                  <Link to="/resources/faqs" onClick={closeMenu}>
+                    FAQs
+                  </Link>
+                  <Link to="/resources/blogs" onClick={closeMenu}>
                     Blogs
-                  </a>
+                  </Link>
+                  <Link to="/resources/videos" onClick={closeMenu}>
+                    Videos
+                  </Link>
                 </div>
               )}
             </li>
             <li className="nav-item">
-              <a href="#contact" className="nav-link" onClick={closeMenu}>
-                <b>Let's Talk</b>
-              </a>
+              <Link to="/careers" className="nav-link" onClick={closeMenu}>
+                Careers
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/contact" className="nav-link" onClick={closeMenu}>
+                Let's Connect
+              </Link>
             </li>
           </ul>
         </div>

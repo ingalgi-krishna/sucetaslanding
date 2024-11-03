@@ -19,17 +19,17 @@ const Footer = () => {
         <div className="footer-links">
           <div className="footer-column">
             <h4>Service Areas</h4>
-            <a href="#service1">Chatbot</a>
-            <a href="#service2">Whatsapp Bot</a>
-            <a href="#service3">Callbot</a>
+            <a href="/what-we-do/chatbot">Chatbot</a>
+            <a href="/what-we-do/whatsapp-bot">Whatsapp Bot</a>
+            <a href="/what-we-do/callbot">Callbot</a>
           </div>
           <div className="footer-column">
             <h4>Quick Links</h4>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#business">Our Business</a>
+            <a href="/">Home</a>
+            <a href="/who-we-are">Who We Are</a>
+            <a href="/what-we-do">Our Business</a>
             <a href="/careers">Careers</a>
-            <a href="#contact">Contact Us</a>
+            <a href="/contact">Let's Connect</a>
           </div>
           <div className="footer-column">
             <h4>Follow Us</h4>
@@ -39,10 +39,10 @@ const Footer = () => {
             <a href="https://www.instagram.com/sucetas/">
               <i className="fab fa-instagram"></i> Instagram
             </a>
-            <a href="https://x.com/sucetas">
+            <a href="https://twitter.com/sucetas">
               <i className="fab fa-twitter"></i> Twitter
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61567804626164&sk=about">
+            <a href="https://www.facebook.com/sucetas">
               <i className="fab fa-facebook"></i> Facebook
             </a>
             <a href="https://www.youtube.com/@Sucetas">
