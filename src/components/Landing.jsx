@@ -2,7 +2,10 @@ import React, { useRef } from "react";
 import "../css/Landing.css";
 import Carousel from "./Carousel";
 import LetsConnect from "./LetsConnect";
-
+import IntroVideo from "./IntroVideo";
+import ChatbotDemo from "./ChatbotDemo";
+import SmartphoneDemo from "./SmartphoneDemo";
+import FAQ from "./FAQ";
 const Landing = () => {
   const carouselRef = useRef(null);
 
@@ -35,9 +38,13 @@ const Landing = () => {
           </div>
         </div>
       </header>
+      <IntroVideo />
+      <ChatbotDemo />
+      <SmartphoneDemo />
       <div ref={carouselRef}>
         <Carousel />
       </div>{" "}
+      <FAQ />
       <LetsConnect />
     </div>
   );

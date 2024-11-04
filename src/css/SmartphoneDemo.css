@@ -1,0 +1,101 @@
+:root {
+  --purple: #5a40de;
+  --lavender: #988ab5;
+  --white: #fcf7ff;
+  --black: #1e1927;
+  --dark-purple: #3e2ca3;
+}
+
+.smartphone-demo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 2rem 0;
+}
+
+.smartphone-banner {
+  width: 100%;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--lavender) 100%);
+  padding: 2rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.smartphone-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.smartphone-info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 5rem;
+}
+
+.smartphone-info h2 {
+  color: var(--purple);
+  margin-bottom: 1rem;
+}
+
+.smartphone-info p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.smartphone-info button {
+  width: max-content;
+  background-color: var(--purple);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.smartphone-info button:hover {
+  background-color: var(--dark-purple);
+}
+
+.smartphone-frame {
+  width: 30%;
+  align-self: center;
+}
+
+.iphone-frame {
+  width: 100%;
+  max-height: 600px;
+  max-width: 300px;
+  aspect-ratio: 9 / 16;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .smartphone-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .smartphone-info,
+  .smartphone-frame {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .iphone-frame {
+    max-height: 300px;
+  }
+}

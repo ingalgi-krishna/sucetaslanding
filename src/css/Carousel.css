@@ -1,8 +1,9 @@
+/* Color Variables */
 :root {
-  --purple: #5a40de;
-  --lavendar: #988ab5;
   --white: #fcf7ff;
-  --black: #1e1927;
+  --lavender: #988ab5;
+  --black: #000000;
+  --purple: #5a40de;
   --dark-purple: #3e2ca3;
 }
 
@@ -13,7 +14,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: var(--black);
   color: var(--white);
 }
 
@@ -115,30 +116,43 @@
 }
 
 .discover-link:hover {
-  border-bottom: 2px solid var(--lavendar);
+  border-bottom: 2px solid var(--lavender);
 }
 
 /* Slick Navigation Arrows */
 .slick-prev,
 .slick-next {
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 10px;
-  border-radius: 50%;
+  background: var(--purple); /* Primary theme color */
+  color: var(--white); /* Text color */
+  border: none;
+  width: 50px; /* Rectangular width */
+  height: 30px; /* Height to make it rectangular */
+  text-align: center; /* Center the arrow icon */
+  line-height: 30px; /* Align arrow icon vertically */
+  font-size: 1.5rem;
+  border-radius: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
 }
 
 .slick-prev {
-  left: 15px;
+  left: 20px; /* Margin from the left side */
   z-index: 1;
 }
 
 .slick-next {
-  right: 15px;
+  right: 20px; /* Margin from the right side */
   z-index: 1;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  opacity: 1; /* Full opacity on hover */
 }
 
 /* Slick Dots Styling */
 .slick-dots {
-  font-size: 2px;
+  font-size: 3px;
   position: absolute;
   bottom: -40px;
   width: 100%;
@@ -148,7 +162,6 @@
 
 .slick-dots li {
   display: inline-block;
-
   margin: 0 5px;
 }
 
@@ -160,7 +173,7 @@
 
 .slick-dots li.slick-active button:before {
   opacity: 1;
-  color: var(--lavendar);
+  color: var(--lavender);
 }
 
 /* Responsive adjustments for better layout on mobile and tablets */
@@ -216,5 +229,11 @@
     width: 30px;
     height: 30px;
     padding: 5px;
+  }
+}
+@media (max-width: 768px) {
+  .slick-prev,
+  .slick-next {
+    top: -40px; /* Position above the carousel */
   }
 }

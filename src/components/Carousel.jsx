@@ -4,11 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../css/Carousel.css";
 
-const App = () => {
+const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
@@ -132,37 +132,13 @@ const App = () => {
 // Custom Next Arrow
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        right: "50px",
-        zIndex: 1,
-        padding: "10px",
-      }}
-      onClick={onClick}
-    />
-  );
+  return <div className={className} onClick={onClick} />;
 };
 
 // Custom Previous Arrow
 const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        left: "-30px",
-        zIndex: 1,
-        padding: "10px",
-      }}
-      onClick={onClick}
-    />
-  );
+  return <div className={className} onClick={onClick} />;
 };
 
-export default App;
+export default Carousel;

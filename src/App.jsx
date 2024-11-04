@@ -5,6 +5,7 @@ import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import WhatWeDo from "./components/WhatWeDo";
 import WhoWeAre from "./components/WhoWeAre";
+
 // import Resources from "./components/Resources";
 // import FAQs from "./components/FAQs";
 // import Blogs from "./components/Blogs";

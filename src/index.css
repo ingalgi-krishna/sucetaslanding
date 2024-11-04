@@ -1,12 +1,13 @@
 :root {
   font-family: "Raleway", sans-serif;
-  --purple: #5a40de;
-  --lavendar: #988ab5;
   --white: #fcf7ff;
-  --black: #1e1927;
-  --black2: #2a2330;
+  --black: #000000;
+  --black2: #1e1927;
+  --lavendar: #988ab5;
+  --purple: #5a40de;
+  --dark-purple: #3e2ca3;
 }
-  
+
 * {
   font-family: "Raleway", sans-serif;
   margin: 0;
@@ -18,7 +19,6 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  color: #333;
   background-color: #fcf7ff;
   line-height: 1.6;
   overflow-x: hidden;

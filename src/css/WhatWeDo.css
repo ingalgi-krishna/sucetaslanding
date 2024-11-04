@@ -24,11 +24,9 @@
 
 .dunefox-banner {
   width: 100%;
-  background-image: linear-gradient(
-    to right,
-    rgba(123, 97, 255, 0.7),
-    rgba(220, 198, 224, 0.7)
-  );
+  background: linear-gradient(135deg, var(--purple) 0%, var(--lavender) 100%);
+  background-size: cover;
+  background-position: center;
   color: var(--white);
   padding: 40px 20px;
   text-align: center;
@@ -36,15 +34,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vh; /* Adjusted for better proportion */
+  height: 40vh;
 }
 
 .banner-headline {
-  font-size: 2rem; /* Increased size for impact */
+  font-size: 2rem;
 }
 
 .banner-subtitle {
-  font-size: 1.2rem; /* Balanced size for clarity */
+  font-size: 1.2rem;
 }
 
 .content-section {
