@@ -6,6 +6,7 @@ import IntroVideo from "./IntroVideo";
 import ChatbotDemo from "./ChatbotDemo";
 import SmartphoneDemo from "./SmartphoneDemo";
 import FAQ from "./FAQ";
+import BlogPreview from "./BlogPreview";
 const Landing = () => {
   const carouselRef = useRef(null);
 
@@ -45,6 +46,7 @@ const Landing = () => {
         <Carousel />
       </div>{" "}
       <FAQ />
+      <BlogPreview />
       <LetsConnect />
     </div>
   );
