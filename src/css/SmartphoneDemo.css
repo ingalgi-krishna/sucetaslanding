@@ -16,14 +16,6 @@
   padding: 2rem 0;
 }
 
-.smartphone-banner {
-  width: 100%;
-  background: linear-gradient(135deg, var(--purple) 0%, var(--lavender) 100%);
-  padding: 2rem;
-  text-align: center;
-  color: var(--white);
-}
-
 .smartphone-content {
   display: flex;
   width: 100%;

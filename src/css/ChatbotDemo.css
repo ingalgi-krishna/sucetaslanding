@@ -11,17 +11,10 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  height: 100vh;
   background-color: var(--black);
   color: var(--white);
   padding: 2rem 0;
-}
-
-.chatbot-banner {
-  width: 100%;
-  background: linear-gradient(135deg, var(--purple) 0%, var(--lavender) 100%);
-  padding: 2rem;
-  text-align: center;
-  color: var(--white);
 }
 
 .chatbot-content {
@@ -34,7 +27,7 @@
 .iframe-container {
   border-radius: 25px;
   align-self: center;
-  background-color: var(--white); /* Placeholder for iframe */
+  background-color: var(--white);
   max-height: 600px;
   height: 100vh;
   width: 100%;

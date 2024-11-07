@@ -1,33 +1,75 @@
-import React from "react";
-import "../css/WhoWeAre.css"; // Ensure the CSS file path is correct
+import React, { useState } from "react";
+import "../css/WhoWeAre.css"; // Make sure the path to your CSS file is correct
 
-const AboutUs = () => {
+const coreValues = [
+  {
+    name: "Synergy",
+    description: "Combining diverse strengths to achieve common goals.",
+  },
+  {
+    name: "Yield to Learning",
+    description: "Embracing continuous improvement and innovation.",
+  },
+  {
+    name: "Nimbleness",
+    description: "Adapting swiftly to new challenges and changing markets.",
+  },
+  {
+    name: "Accountability",
+    description: "Taking responsibility for our actions and outcomes.",
+  },
+  {
+    name: "People First",
+    description: "Prioritizing team welfare and a supportive work environment.",
+  },
+  {
+    name: "Service Oriented",
+    description: "Committed to excellence in serving our clients.",
+  },
+  {
+    name: "Ethics",
+    description: "Upholding the highest standards of integrity.",
+  },
+];
+
+const WhoWeAre = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+
   return (
-    <div className="about-us-container">
-      <div className="banner">
-        <h1>Welcome to Our World of Innovation</h1>
-        <p>Join us on a journey of technological discovery and innovation.</p>
+    <div className="who-we-are-container">
+      <div className="who-we-are-banner">
+        <h1>Meet Our Team</h1>
+        <p>"Empowering change with innovative technology solutions."</p>
       </div>
       <div className="vision-section">
-        <img src="dunefox.jpg" alt="Vision" className="vision-image" />
-        <div className="vision-text">
-          <h2>Our Vision</h2>
-          <p>
-            We aim to revolutionize the way businesses interact with technology,
-            creating seamless, intuitive and empowering experiences.
-          </p>
-        </div>
-      </div>
-      <div className="details-section">
-        <h2>What We Dream, What We Offer</h2>
-        <p>
-          As a tech startup, we are committed to pushing the boundaries of
-          what's possible, crafting solutions that anticipate the future needs
-          of our clients.
+        <img
+          src="directors.jpg"
+          alt="Leadership Team"
+          className="leadership-image"
+        />
+        <p className="vision-quote">
+          "Leading with integrity and innovation in the AI industry."
         </p>
+      </div>
+      <div className="core-values">
+        <h2>Our Synapse of Values</h2>
+        <div className="carousel-container">
+          {coreValues.map((value, index) => (
+            <animated.div
+              key={index}
+              style={props}
+              onClick={() => setActiveIndex(index)}
+              className={`value-item ${index === activeIndex ? "active" : ""}`}
+            >
+              <h3>{value.name}</h3>
+              {index === activeIndex && <p>{value.description}</p>}
+            </animated.div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default AboutUs;
+export default WhoWeAre;

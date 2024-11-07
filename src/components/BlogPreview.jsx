@@ -43,7 +43,7 @@ const blogEntries = [
 const BlogPreview = () => {
   return (
     <div className="blog-preview-container">
-      <h1 className="page-title">Explore Our Latest Insights</h1>
+      <h1 className="page-title">Unlocking Tomorrow: Insights & Innovations</h1>
       <div className="cards-container">
         {blogEntries.map((entry) => (
           <a

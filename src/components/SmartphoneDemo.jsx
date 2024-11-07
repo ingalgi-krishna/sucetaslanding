@@ -4,12 +4,6 @@ import "../css/SmartphoneDemo.css"; // Ensure this path is correct
 const SmartphoneDemo = () => {
   return (
     <div className="smartphone-demo-container">
-      <div className="smartphone-banner">
-        <h1>Experience Our WhatsApp Chatbot</h1>
-        <p>
-          Discover how our AI solutions enhance mobile interactions seamlessly.
-        </p>
-      </div>
       <div className="smartphone-content">
         <div className="smartphone-info">
           <h2>Interactive Chatbot Demo</h2>

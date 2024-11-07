@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "../css/Landing.css";
 import Carousel from "./Carousel";
-import LetsConnect from "./LetsConnect";
+import GetInTouch from "./LetsConnectHome";
 import IntroVideo from "./IntroVideo";
 import ChatbotDemo from "./ChatbotDemo";
 import SmartphoneDemo from "./SmartphoneDemo";
@@ -47,7 +47,7 @@ const Landing = () => {
       </div>{" "}
       <FAQ />
       <BlogPreview />
-      <LetsConnect />
+      <GetInTouch />
     </div>
   );
 };
