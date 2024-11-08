@@ -1,45 +1,86 @@
-// CoreValuesSlider.jsx
-import React from "react";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
-import "../css/CoreValuesSlider.css"; // Ensure this path is correct for your project
+import React, { useState } from "react";
+import "../css/CoreValues.css"; // Ensure this path is correct
 
 const coreValues = [
   {
-    name: "Innovation",
-    description: "Pioneering new solutions with bold creativity.",
+    key: "S",
+    name: "Synergy",
+    description:
+      "Fostering a teamwork environment that emphasizes combined efforts and cooperative success.",
   },
   {
-    name: "Integrity",
-    description: "Upholding the highest standards of honesty and transparency.",
+    key: "Y",
+    name: "Yield to Learning",
+    description:
+      "Embracing continuous learning and adaptation to stay ahead in technology.",
   },
   {
-    name: "Collaboration",
-    description: "Achieving together what we cannot alone.",
+    key: "N",
+    name: "Nimbleness",
+    description:
+      "Remaining agile and responsive to the ever-changing market demands.",
   },
   {
-    name: "Excellence",
-    description: "Committing to only the best outcomes in all our endeavors.",
+    key: "A",
+    name: "Accountability",
+    description:
+      "Upholding our commitments and taking responsibility for our actions.",
   },
   {
-    name: "Impact",
-    description: "Focused on making a significant positive difference.",
+    key: "P",
+    name: "People First",
+    description: "Prioritizing the well-being and growth of every team member.",
+  },
+  {
+    key: "S",
+    name: "Service Oriented",
+    description:
+      "Committing to excellence in service delivery and customer satisfaction.",
+  },
+  {
+    key: "E",
+    name: "Ethics",
+    description:
+      "Adhering to the highest ethical standards and integrity in all our actions.",
   },
 ];
 
-const CoreValuesSlider = () => {
+const CoreValuesSynapse = () => {
+  const [flippedIndex, setFlippedIndex] = useState(null);
+
+  const handleFlip = (index) => {
+    setFlippedIndex(flippedIndex === index ? null : index);
+  };
+
   return (
-    <div className="core-values-slider">
-      <AwesomeSlider>
+    <div className="synapse-container">
+      <div className="synapse-banner">
+        <h1>Our Core SYNAPSE Values</h1>
+        <p>
+          Just as synapses in the brain connect neurons to enable communication,
+          our core values connect us to our clients and their business success.
+        </p>
+      </div>
+      <div className="values-grid">
         {coreValues.map((value, index) => (
-          <div key={index} className="slide">
-            <h2>{value.name}</h2>
-            <p>{value.description}</p>
+          <div
+            key={index}
+            className={`value-card ${flippedIndex === index ? "flipped" : ""}`}
+            onClick={() => handleFlip(index)}
+          >
+            <div className="card-front">
+              <h2>
+                {value.key} - {value.name}
+              </h2>
+            </div>
+            <div className="card-back">
+              <p>{value.description}</p>
+            </div>
           </div>
         ))}
-      </AwesomeSlider>
+      </div>
     </div>
   );
 };
 
-export default CoreValuesSlider;
+export default CoreValuesSynapse;

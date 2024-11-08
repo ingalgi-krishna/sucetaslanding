@@ -2,11 +2,12 @@
   --purple: #5a40de;
   --lavender: #988ab5;
   --white: #fcf7ff;
-  --black: #1e1927;
+  --black: #000000;
   --dark-purple: #3e2ca3;
 }
 
 .who-we-are-container {
+  text-align: center;
   color: var(--white);
   background-color: var(--black);
   font-family: "Arial", sans-serif;
@@ -14,7 +15,7 @@
 
 .banner {
   text-align: center;
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   background: linear-gradient(to right, var(--purple), var(--lavender));
   height: 40vh;
   display: flex;
@@ -24,6 +25,7 @@
 
 .directors-section .directors-photo {
   position: relative;
+  background-size: cover;
   height: 80vh;
 }
 
@@ -61,32 +63,52 @@
 }
 
 .core-values {
-  padding: 4rem;
-  background-color: var(--dark-purple);
-  text-align: left;
+  padding: 2rem 5rem;
+  background-color: var(--black);
 }
 
 .core-values h2 {
   font-size: 2rem;
   color: var(--lavender);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-.values-narrative p {
-  margin-bottom: 2rem;
+.core-values p {
   font-size: 1.2rem;
   color: var(--white);
+  margin-bottom: 3rem;
 }
 
-.value-story h3 {
+.value-entry {
+  border-bottom: 1px solid var(--lavender);
+  padding: 1rem 0;
+}
+
+.value-title {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.toggle-icon {
   font-size: 1.5rem;
-  color: var(--lavender);
 }
 
-.value-story p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+.value-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.value-description {
+  float: left;
+}
+
+.value-image {
+  width: 40%;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
@@ -117,5 +139,29 @@
 
   .core-values h2 {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .value-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures everything is centered */
+  }
+
+  .value-description {
+    width: 90%; /* Adjusts the width */
+    text-align: left; /* Justifies the text for alignment */
+    word-spacing: normal; /* Default spacing, adjust as needed */
+    letter-spacing: normal; /* Adjust this as needed for better uniformity */
+    line-height: 1.6; /* Ensures consistent line height */
+    margin-bottom: 1rem; /* Space between the text and the image */
+  }
+
+  .value-image {
+    width: 100%; /* Full width of its container */
+    max-width: 300px; /* Maximum width to keep it reasonable */
+    margin-top: 1rem; /* Space above for separation */
+    display: block; /* Ensures it's centered correctly */
   }
 }
