@@ -1,0 +1,66 @@
+/* CoreValuesSlider.css */
+:root {
+  --purple: #5a40de;
+  --lavender: #988ab5;
+  --white: #fcf7ff;
+  --black: #1e1927;
+  --dark-purple: #3e2ca3;
+}
+
+.core-values-slider .aws-btn {
+  --slider-control-background-color: var(--purple);
+  --slider-control-color: var(--white);
+  border-radius: 50%;
+  opacity: 0.8;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.core-values-slider .aws-btn:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.core-values-slider .aws-sld {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50vh; /* Setting height to 50vh */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.core-values-slider h2 {
+  color: var(--lavender);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.core-values-slider p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto; /* Centering description */
+}
+
+@media (max-width: 768px) {
+  .core-values-slider .aws-sld {
+    padding: 1rem;
+  }
+
+  .core-values-slider h2 {
+    font-size: 1.2rem;
+  }
+
+  .core-values-slider p {
+    font-size: 0.9rem;
+  }
+}

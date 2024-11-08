@@ -12,7 +12,7 @@
   align-items: center;
   width: 100%;
   background-color: #000;
-  border-bottom: 1px solid var(--lavender);
+  padding-bottom: 5rem;
 }
 
 .careers-banner {
@@ -53,15 +53,21 @@
   width: 50%;
 }
 
+.careers-text p {
+  font-size: 1rem;
+}
+
 .careers-text p span {
   color: var(--purple);
   font-weight: 700;
 }
 
 .careers-form {
+  border: 1px solid var(--lavender); /* Adds a purple border */
+  border-radius: 8px;
   font-size: small;
   width: 50%;
-  background-color: #1c1c1c; /* Dark grey background for form */
+  background-color: #000000; /* Dark grey background for form */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);

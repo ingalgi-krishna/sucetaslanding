@@ -16,7 +16,9 @@
   color: var(--white);
   padding: 2rem 0;
 }
-
+.title-container {
+  padding-bottom: 2rem;
+}
 .chatbot-content {
   display: flex;
   width: 100%;

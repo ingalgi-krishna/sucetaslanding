@@ -8,32 +8,33 @@
 }
 
 .carousel-container {
-  padding: 1rem 5rem;
+  padding: 2rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: var(--black);
   color: var(--white);
 }
 
 .solutions {
+  justify-content: center;
   display: flex;
+  align-items: center;
   width: 100%;
   flex-direction: row;
 }
 
 .carousel-container h1 {
-  padding-bottom: 2rem;
   color: var(--white);
   font-size: 2rem;
 }
 
 .left-pane {
-  width: 25%;
+  width: 30%;
+  max-height: 100vh;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,9 +65,10 @@
 }
 
 .right-pane {
+  max-height: 100vh;
   float: right;
   gap: 20px;
-  width: 70%;
+  width: 60%;
 }
 
 .badge-wrapper {
@@ -92,8 +94,7 @@
 .badge-title,
 .badge-description,
 .badge-link {
-  width: 100%; /* Full width to maintain alignment */
-  height: 25%; /* Equal division of height for each section */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,7 +119,7 @@
 }
 
 .discover-link {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--purple);
   font-weight: 700;
   text-decoration: none;
@@ -131,26 +132,29 @@
 /* Slick Navigation Arrows */
 .slick-prev,
 .slick-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--purple); /* Primary theme color */
   color: var(--white); /* Text color */
   border: none;
-  width: 50px; /* Rectangular width */
-  height: 30px; /* Height to make it rectangular */
-  text-align: center; /* Center the arrow icon */
-  line-height: 30px; /* Align arrow icon vertically */
-  font-size: 1.5rem;
+  width: 40px;
+  height: 80px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 5rem;
   border-radius: 5px;
-  opacity: 0.85;
+  opacity: 0.9;
   transition: opacity 0.3s ease;
 }
 
 .slick-prev {
-  left: 20px; /* Margin from the left side */
+  left: -20px; /* Margin from the left side */
   z-index: 1;
 }
 
 .slick-next {
-  right: 20px; /* Margin from the right side */
+  right: -20px; /* Margin from the right side */
   z-index: 1;
 }
 
@@ -161,12 +165,12 @@
 
 /* Slick Dots Styling */
 .slick-dots {
-  font-size: 3px;
-  position: absolute;
-  bottom: -40px;
+  position: relative;
+  bottom: -20px;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .slick-dots li {
@@ -175,14 +179,14 @@
 }
 
 .slick-dots li button:before {
-  font-size: 10px;
-  color: var(--white);
-  opacity: 0.75;
+  font-size: 8px;
+  color: var(--lavender);
+  opacity: 0.8;
 }
 
 .slick-dots li.slick-active button:before {
   opacity: 1;
-  color: var(--lavender);
+  color: var(--white);
 }
 
 /* Responsive adjustments for better layout on mobile and tablets */
