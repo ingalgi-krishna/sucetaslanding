@@ -47,19 +47,12 @@ const Navbar = () => {
                 Who we are
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/resources"
-                className="nav-link"
-                onClick={toggleDropdown}
-              >
+            <li className="nav-item dropdown">
+              <span className="nav-link" onClick={toggleDropdown}>
                 Resources &#9662;
-              </Link>
+              </span>
               {dropdown && (
-                <div
-                  className="dropdown-content"
-                  style={{ display: dropdown ? "block" : "none" }}
-                >
+                <div className="dropdown-content">
                   <Link to="/resources/faqs" onClick={closeMenu}>
                     FAQs
                   </Link>

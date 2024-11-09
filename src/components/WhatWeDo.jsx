@@ -1,17 +1,18 @@
 import React from "react";
 import "../css/WhatWeDo.css"; // Ensure the CSS file path is correct
+import WebChatbot from "./WebChatbot";
 
 const DunefoxProduct = () => {
   return (
     <div className="dunefox-product-page">
-      <h1 className="main-title">
-        Looking to Extend Your Business Reach and Engagement? Here's what we
-        offer
-      </h1>
       <div className="dunefox-banner">
-        <h1 className="banner-headline">Dunefox</h1>
-        <p className="banner-subtitle">It's Time, Go AI</p>
+        <h1 className="banner-headline">
+          {" "}
+          Looking to Extend Your Business Reach and Engagement?
+        </h1>
+        <p className="banner-subtitle">Then it's Time to go AI</p>
       </div>
+      <h1 className="main-title"> Dunefox, That's it! </h1>
       <div className="content-section">
         <div className="service-grid">
           <div
@@ -63,10 +64,11 @@ const DunefoxProduct = () => {
             className="learn-more-btn"
             onClick={() => console.log("Navigate to learn more about Dunefox")}
           >
-            Learn More
+            Try Dunefox
           </button>
         </div>
       </div>
+      <WebChatbot />
     </div>
   );
 };

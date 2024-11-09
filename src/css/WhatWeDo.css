@@ -10,15 +10,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 3rem;
   min-height: 100vh;
   background-color: black;
   color: var(--white);
 }
 
+.content-section {
+  padding: 0rem 5rem;
+  padding-bottom: 50px;
+}
+
 .main-title {
   text-align: center;
-  padding-bottom: 5rem;
+  padding: 2rem;
   font-size: 2rem;
 }
 
@@ -28,7 +32,7 @@
   background-size: cover;
   background-position: center;
   color: var(--white);
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
   text-align: center;
   display: flex;
   flex-direction: column;

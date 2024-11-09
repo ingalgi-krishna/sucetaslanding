@@ -1,0 +1,134 @@
+:root {
+  --purple: #5a40de;
+  --lavender: #988ab5;
+  --white: #fcf7ff;
+  --black: #000000;
+  --dark-purple: #3e2ca3;
+  --highlight-gradient: linear-gradient(45deg, var(--purple), var(--lavender));
+}
+
+.web-chatbot-container {
+  color: var(--white);
+  background-color: var(--black);
+  font-family: "Arial", sans-serif;
+  padding: 2rem;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.section-left .image-container,
+.section-right .image-container {
+  flex: 1 1 60%;
+  padding: 1rem;
+}
+
+.section-left .info-container,
+.section-right .info-container {
+  flex: 1 1 40%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-right {
+  flex-direction: row-reverse;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info-container h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.info-container p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.highlight {
+  background-image: var(--highlight-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.performance-metrics {
+  width: 100vw;
+  background-color: var(--black2);
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+}
+
+.performance-metrics h1 {
+  font-size: 2rem;
+  color: var(--lavender);
+  margin-bottom: 1rem;
+}
+
+.performance-metrics p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-around;
+}
+
+.metric {
+  background-color: var(--purple);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--white);
+  width: 20%;
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .section-right,
+  .section-left {
+    flex-direction: column;
+  }
+
+  .section-right .info-container,
+  .section-left .info-container,
+  .section-right .image-container,
+  .section-left .image-container {
+    flex: 1 0 100%;
+  }
+
+  .performance-metrics .metrics {
+    flex-direction: column;
+  }
+
+  .metric {
+    margin-bottom: 1rem;
+    width: auto;
+  }
+}
