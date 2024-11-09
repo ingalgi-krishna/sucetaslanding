@@ -53,14 +53,14 @@ const Navbar = () => {
               </span>
               {dropdown && (
                 <div className="dropdown-content">
-                  <Link to="/resources/faqs" onClick={closeMenu}>
-                    FAQs
+                  <Link to="/resources/insights" onClick={closeMenu}>
+                    Insights
                   </Link>
                   <Link to="/resources/blogs" onClick={closeMenu}>
                     Blogs
                   </Link>
-                  <Link to="/resources/videos" onClick={closeMenu}>
-                    Videos
+                  <Link to="/resources/media-room" onClick={closeMenu}>
+                    Media Room
                   </Link>
                 </div>
               )}

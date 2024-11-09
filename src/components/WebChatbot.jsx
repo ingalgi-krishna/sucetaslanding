@@ -5,11 +5,11 @@ const WebChatbot = () => {
   return (
     <div className="web-chatbot-container">
       {/* First Section with Image on the Left and Text on the Right */}
-      <div className="section section-left">
+      <div className="section section-one">
         <div className="image-container">
           <img src="chatbot_interactions.jpg" alt="Interactive Chatbot" />
         </div>
-        <div className="info-container">
+        <div className="text-container">
           <h1>Engage Effortlessly with AI</h1>
           <p>Unleashing Dynamic Customer Interactions</p>
           <h2>
@@ -25,8 +25,8 @@ const WebChatbot = () => {
       </div>
 
       {/* Second Section with Text on the Left and Image on the Right */}
-      <div className="section section-right">
-        <div className="info-container">
+      <div className="section section-two">
+        <div className="text-container">
           <h1>Personalize at Scale</h1>
           <p>Make Every Customer Interaction Personal</p>
           <h2>

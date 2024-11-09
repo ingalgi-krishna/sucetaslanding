@@ -5,11 +5,7 @@ import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import WhatWeDo from "./components/WhatWeDo";
 import WhoWeAre from "./components/WhoWeAre";
-
-// import Resources from "./components/Resources";
-// import FAQs from "./components/FAQs";
-// import Blogs from "./components/Blogs";
-// import Videos from "./components/Videos";
+import MediaPage from "./components/MediaPage"; // Import the MediaPage component
 import Careers from "./components/Careers";
 import LetsConnect from "./components/LetsConnect";
 import PrivacyPolicy from "./components/Privacy";
@@ -26,10 +22,8 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/what-we-do" element={<WhatWeDo />} />
           <Route path="/who-we-are" element={<WhoWeAre />} />
-          {/* <Route path="/resources" element={<Resources />} /> */}
-          {/* <Route path="/resources/faqs" element={<FAQs />} /> */}
-          {/* <Route path="/resources/blogs" element={<Blogs />} /> */}
-          {/* <Route path="/resources/videos" element={<Videos />} /> */}
+          <Route path="/resources/media-room" element={<MediaPage />} />{" "}
+          {/* Add MediaPage Route */}
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<LetsConnect />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/WhatWeDo.css"; // Ensure the CSS file path is correct
 import WebChatbot from "./WebChatbot";
+import MediaPage from "./MediaPage";
 
 const DunefoxProduct = () => {
   return (
