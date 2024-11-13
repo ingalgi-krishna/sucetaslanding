@@ -12,6 +12,7 @@ const Careers = () => {
   });
 
   const [statusMessage, setStatusMessage] = useState(null); // Status message for user feedback
+  const [isSubmitting, setIsSubmitting] = useState(false); // Submission state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,6 +66,8 @@ const Careers = () => {
       return;
     }
 
+    setIsSubmitting(true); // Set submission state to true
+
     // Create a FormData object to include text fields and file
     const formDataObj = new FormData();
     formDataObj.append("name", formData.name);
@@ -100,6 +103,8 @@ const Careers = () => {
       setStatusMessage(
         "Error submitting application. Please check your connection."
       );
+    } finally {
+      setIsSubmitting(false); // Reset submission state
     }
   };
 
@@ -194,7 +199,9 @@ const Careers = () => {
                 marketing text messages regarding employment opportunities.
               </label>
             </div>
-            <button type="submit">Submit Application</button>
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit Application"}
+            </button>
           </form>
           {statusMessage && <p className="status-message">{statusMessage}</p>}
         </div>

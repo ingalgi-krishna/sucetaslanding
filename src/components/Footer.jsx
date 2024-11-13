@@ -1,7 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Footer.css"; // Verify this path matches your CSS file location
 
 const Footer = () => {
+  const [email, setEmail] = useState(""); // State for email input
+  const [subscriptionMessage, setSubscriptionMessage] = useState(null); // State for feedback message
+
+  // Handle email input changes
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  // Validate email format using regex
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Handle subscription on button click
+  const handleSubscribe = async () => {
+    if (!email) {
+      setSubscriptionMessage("Please enter an email.");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setSubscriptionMessage("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/newsletter/subscribe",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const data = await response.json();
+      if (response.ok) {
+        setSubscriptionMessage("Subscribed successfully!");
+        setEmail(""); // Clear email input
+      } else {
+        setSubscriptionMessage(data.message || "Failed to subscribe.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setSubscriptionMessage("Error subscribing. Please try again later.");
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer-top">
@@ -12,8 +61,16 @@ const Footer = () => {
             enduring businesses and create lasting value for stakeholders.
           </p>
           <div className="newsletter">
-            <input type="email" placeholder="Enter your email" />
-            <button>Subscribe Now</button>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+            <button onClick={handleSubscribe}>Subscribe Now</button>
+            {subscriptionMessage && (
+              <p className="subscription-message">{subscriptionMessage}</p>
+            )}
           </div>
         </div>
         <div className="footer-links">
@@ -40,7 +97,7 @@ const Footer = () => {
               <i className="fab fa-instagram"></i> Instagram
             </a>
             <a href="https://twitter.com/sucetas">
-              <i class="bi bi-twitter-x"></i> Twitter
+              <i className="fab fa-twitter"></i> Twitter
             </a>
             <a href="https://www.facebook.com/sucetas">
               <i className="fab fa-facebook"></i> Facebook

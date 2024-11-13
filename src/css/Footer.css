@@ -52,6 +52,18 @@
   cursor: pointer;
 }
 
+.subscription-message {
+  text-align: center;
+  font-size: 0.8rem; /* Smaller font size */
+  color: var(--purple); /* Green color for success */
+  margin-top: 1px; /* Spacing above the message */
+  font-weight: 600; /* Medium font weight for readability */
+}
+
+.subscription-message.error {
+  color: red; /* Red color for error messages */
+}
+
 .footer-links {
   padding-top: 1rem;
   display: flex;

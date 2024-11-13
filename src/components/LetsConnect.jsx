@@ -8,6 +8,8 @@ const GetInTouch = () => {
     message: "",
   });
 
+  const [statusMessage, setStatusMessage] = useState(null); // To display status messages
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -26,14 +28,14 @@ const GetInTouch = () => {
       });
 
       if (response.ok) {
-        alert("Message sent! We will get back to you soon.");
-        setFormData({ name: "", email: "", message: "" }); // Clear the form
+        setStatusMessage("Message sent! We will get back to you soon.");
+        setFormData({ name: "", email: "", message: "" }); // Clear the form after success
       } else {
-        alert("Failed to send message. Please try again later.");
+        setStatusMessage("Failed to send message. Please try again later.");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Error sending message. Please check your connection.");
+      setStatusMessage("Error sending message. Please check your connection.");
     }
   };
 
@@ -78,6 +80,7 @@ const GetInTouch = () => {
             />
             <button type="submit">Send Message</button>
           </form>
+          {statusMessage && <p className="status-message">{statusMessage}</p>}
         </div>
         <div className="contact-info">
           <h2>Connect With Us</h2>
