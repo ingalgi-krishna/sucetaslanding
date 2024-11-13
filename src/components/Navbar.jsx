@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/Navbar.css"; // Ensure the CSS file path is correct
+import "../css/Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
     setDropdown((prevDropdown) => !prevDropdown);
   };
 
-  // Close the menu specifically (used when clicking on nav items)
+  // Close menu when clicking on a nav item
   const closeMenu = () => {
     setIsOpen(false);
     setDropdown(false);
@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
           Sucetas
         </Link>
         <div className="navbar-toggle" onClick={toggleMenu}>
@@ -48,7 +48,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <span className="nav-link" onClick={toggleDropdown}>
+              <span
+                className="nav-link dropdown-toggle"
+                onClick={toggleDropdown}
+              >
                 Resources &#9662;
               </span>
               {dropdown && (

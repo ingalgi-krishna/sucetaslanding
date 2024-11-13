@@ -1,0 +1,71 @@
+/* Root Section */
+.partners-section {
+  width: 100w;
+  height: max-content;
+  padding: 40px 20px;
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+}
+
+/* Title Styling */
+.partners-title {
+  color: var(--purple);
+  font-size: 2em;
+  margin-bottom: 4rem;
+}
+
+/* Partners Grid Layout */
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Badge Container for Each Partner Logo */
+.partner-logo-container {
+  background-color: var(--white); /* White background for each badge */
+  border-radius: 12px; /* Rounded corners for badge */
+  padding: 20px; /* Padding for spacing around the logo */
+  width: 150px; /* Default width for badges */
+  height: 100px; /* Default height for badges */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: transform 0.3s;
+}
+
+.partner-logo-container:hover {
+  transform: scale(1.05);
+}
+
+/* Logo Styling */
+.partner-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  /* Smaller badge size for medium screens */
+  .partner-logo-container {
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce badge size for very small screens */
+  .partner-logo-container {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+  .partners-title {
+    font-size: 1.5em;
+  }
+}

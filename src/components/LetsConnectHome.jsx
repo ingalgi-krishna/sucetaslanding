@@ -8,6 +8,8 @@ const GetInTouch = () => {
     message: "",
   });
 
+  const [statusMessage, setStatusMessage] = useState(null); // To display status messages
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -16,10 +18,25 @@ const GetInTouch = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Message sent! We will get back to you soon.");
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatusMessage("Message sent! We will get back to you soon.");
+        setFormData({ name: "", email: "", message: "" }); // Clear the form after success
+      } else {
+        setStatusMessage("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatusMessage("Error sending message. Please check your connection.");
+    }
   };
 
   return (
@@ -27,7 +44,7 @@ const GetInTouch = () => {
       <h1>
         Ready to reach out? Drop us a line and let’s start something great
         together.
-      </h1>{" "}
+      </h1>
       <div className="contact">
         <div className="contact-form">
           <h2>Contact Us</h2>
@@ -60,21 +77,22 @@ const GetInTouch = () => {
             />
             <button type="submit">Send Message</button>
           </form>
+          {statusMessage && <p className="status-message">{statusMessage}</p>}
         </div>
         <div className="contact-info">
           <h2>Connect With Us</h2>
           <p>Explore collaboration or just say hello:</p>
           <div className="info-section">
             <h3>New Projects</h3>
-            <a href="mailto:contact@sucetas.com">contact@sucetas.com</a>
+            <a href="mailto:contact@sucetastech.com">contact@sucetastech.com</a>
           </div>
           <div className="info-section">
             <h3>Support</h3>
-            <a href="mailto:support@sucetas.com">support@sucetas.com</a>
+            <a href="mailto:support@sucetastech.com">support@sucetastech.com</a>
           </div>
           <div className="info-section">
             <h3>Career Opportunities</h3>
-            <a href="mailto:careers@sucetas.com">careers@sucetas.com</a>
+            <a href="mailto:careers@sucetastech.com">careers@sucetastech.com</a>
           </div>
           <div className="info-section">
             <h3>Call Us</h3>

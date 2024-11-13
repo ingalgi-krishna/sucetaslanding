@@ -45,7 +45,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--lavender);
   background-color: var(--black);
@@ -54,14 +54,12 @@ body {
 .filter-bar button {
   background-color: transparent;
   border: none;
-  /* padding: 0.75rem 2rem; */
   font-size: 1rem;
   cursor: pointer;
   transition: background-color var(--transition-duration),
     color var(--transition-duration);
   display: flex;
   align-items: center;
-  gap: 10px;
   border-radius: 4px;
 }
 
@@ -220,6 +218,9 @@ body {
   .banner h1 {
     font-size: 1.5rem;
   }
+  .banner p {
+    font-size: 0.8rem;
+  }
 
   .media-tile iframe {
     height: 200px;
@@ -230,7 +231,15 @@ body {
     display: none;
   }
 
+  .filter-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
   .filter-bar button i {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }

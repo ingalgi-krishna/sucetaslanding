@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../css/WhatWeDo.css"; // Ensure the CSS file path is correct
 import WebChatbot from "./WebChatbot";
+import WhatsAppBot from "./WhatsAppBot";
+import CallBot from "./CallBot";
+import AnalyticsInsights from "./AnalyticsInsights";
 import MediaPage from "./MediaPage";
 
 const DunefoxProduct = () => {
+  // Set up refs for each component section
+  const webChatbotRef = useRef(null);
+  const whatsappBotRef = useRef(null);
+  const callBotRef = useRef(null);
+  const analyticsInsightsRef = useRef(null);
+
+  // Function to scroll to the selected component
+  const scrollToComponent = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="dunefox-product-page">
       <div className="dunefox-banner">
         <h1 className="banner-headline">
-          {" "}
           Looking to Extend Your Business Reach and Engagement?
         </h1>
         <p className="banner-subtitle">Then it's Time to go AI</p>
@@ -18,41 +31,30 @@ const DunefoxProduct = () => {
         <div className="service-grid">
           <div
             className="service"
-            onClick={() =>
-              (window.location.href = "https://example.com/web-chatbots")
-            }
+            onClick={() => scrollToComponent(webChatbotRef)}
           >
-            <i className="fa fa-comments" aria-hidden="true"></i>{" "}
-            {/* Icon for Web Chatbots */}
-            Web Chatbots
+            <i className="fa fa-comments" aria-hidden="true"></i> Web Chatbots
           </div>
           <div
             className="service"
-            onClick={() =>
-              (window.location.href = "https://example.com/whatsapp-chatbots")
-            }
+            onClick={() => scrollToComponent(whatsappBotRef)}
           >
-            <i className="fa fa-whatsapp" aria-hidden="true"></i>{" "}
-            {/* Icon for WhatsApp Chatbots */}
-            WhatsApp Chatbots
+            <i className="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
+            Chatbots
           </div>
           <div
             className="service coming-soon"
-            onClick={() => console.log("Call Bots - Coming soon")}
+            onClick={() => scrollToComponent(callBotRef)}
           >
-            <i className="fa fa-phone" aria-hidden="true"></i>{" "}
-            {/* Icon for Call Bots */}
-            Call Bot <span className="coming-soon-badge"></span>
+            <i className="fa fa-phone" aria-hidden="true"></i> Call Bot{" "}
+            <span className="coming-soon-badge"></span>
           </div>
           <div
             className="service"
-            onClick={() =>
-              (window.location.href = "https://example.com/analytics-insights")
-            }
+            onClick={() => scrollToComponent(analyticsInsightsRef)}
           >
-            <i className="fa fa-chart-line" aria-hidden="true"></i>{" "}
-            {/* Icon for Analytics & Insights */}
-            Analytics & Insights
+            <i className="fa fa-chart-line" aria-hidden="true"></i> Analytics &
+            Insights
           </div>
         </div>
         <div className="product-details">
@@ -69,7 +71,20 @@ const DunefoxProduct = () => {
           </button>
         </div>
       </div>
-      <WebChatbot />
+
+      {/* Component Sections with Refs */}
+      <div ref={webChatbotRef}>
+        <WebChatbot />
+      </div>
+      <div ref={whatsappBotRef}>
+        <WhatsAppBot />
+      </div>
+      <div ref={callBotRef}>
+        <CallBot />
+      </div>
+      <div ref={analyticsInsightsRef}>
+        <AnalyticsInsights />
+      </div>
     </div>
   );
 };

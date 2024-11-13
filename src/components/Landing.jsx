@@ -6,7 +6,8 @@ import IntroVideo from "./IntroVideo";
 import ChatbotDemo from "./ChatbotDemo";
 import SmartphoneDemo from "./SmartphoneDemo";
 import FAQ from "./FAQ";
-import BlogPreview from "./BlogPreview";
+import BlogPreview from "./BlogPreviewHome";
+import Partners from "./Partner";
 const Landing = () => {
   const carouselRef = useRef(null);
 
@@ -45,6 +46,7 @@ const Landing = () => {
       <div ref={carouselRef}>
         <Carousel />
       </div>{" "}
+      <Partners />
       <FAQ />
       <BlogPreview />
       <GetInTouch />

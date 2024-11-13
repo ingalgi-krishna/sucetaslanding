@@ -11,6 +11,8 @@ const Careers = () => {
     consent: false, // State to handle consent checkbox
   });
 
+  const [statusMessage, setStatusMessage] = useState(null); // Status message for user feedback
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -55,22 +57,50 @@ const Careers = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.consent) {
       alert("Please agree to the consent to proceed.");
       return;
     }
-    console.log(formData);
-    alert("Application submitted! We will get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-      resume: null,
-      consent: false,
-    });
+
+    // Create a FormData object to include text fields and file
+    const formDataObj = new FormData();
+    formDataObj.append("name", formData.name);
+    formDataObj.append("email", formData.email);
+    formDataObj.append("phone", formData.phone);
+    formDataObj.append("message", formData.message);
+    formDataObj.append("resume", formData.resume);
+    formDataObj.append("consent", formData.consent);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/careers", {
+        method: "POST",
+        body: formDataObj,
+      });
+
+      if (response.ok) {
+        setStatusMessage("Application submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          resume: null,
+          consent: false,
+        });
+      } else {
+        setStatusMessage(
+          "Failed to submit application. Please try again later."
+        );
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatusMessage(
+        "Error submitting application. Please check your connection."
+      );
+    }
   };
 
   return (
@@ -160,12 +190,13 @@ const Careers = () => {
                 onChange={handleConsentChange}
               />
               <label htmlFor="consent">
-                By Checking this box, I consent to receive transactional and
+                By checking this box, I consent to receive transactional and
                 marketing text messages regarding employment opportunities.
               </label>
             </div>
             <button type="submit">Submit Application</button>
           </form>
+          {statusMessage && <p className="status-message">{statusMessage}</p>}
         </div>
       </div>
     </div>

@@ -115,7 +115,7 @@
 }
 
 button {
-  background-color: var(--purple);
+  background-color: var(--purple) !important;
   color: var(--white);
   border: none;
   padding: 15px 15px;
@@ -126,7 +126,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--dark-purple);
+  background-color: var(--dark-purple) !important;
 }
 
 @media (max-width: 1024px) {
