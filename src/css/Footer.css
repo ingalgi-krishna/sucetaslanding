@@ -2,7 +2,7 @@
 .footer {
   background-color: #000;
   color: #fcf7ff;
-  padding: 0rem 5rem;
+  padding: 0rem 4rem;
   padding-top: 2rem;
   line-height: 1.6;
 }
@@ -19,13 +19,13 @@
 }
 
 .footer-branding h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #fcf7ff;
   margin-bottom: 0.5rem;
 }
 
 .footer-branding p {
-  margin-right: 30%;
+  margin-right: 10%;
   margin-bottom: 1rem;
 }
 
@@ -142,6 +142,10 @@
 
 /* Styles for smaller screens */
 @media (max-width: 768px) {
+  .footer {
+    padding: 0rem 2rem;
+  }
+
   .footer-top {
     flex-direction: column;
   }
@@ -150,7 +154,6 @@
     flex: 1 1 100%; /* Full width on smaller screens */
     text-align: left;
     width: 100%;
-    margin-right: 0; /* Remove right margin */
     order: 2; /* Newsletter appears at the bottom */
   }
 
