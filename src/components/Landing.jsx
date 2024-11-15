@@ -40,12 +40,10 @@ const Landing = () => {
           </div>
         </div>
       </header>
-      <IntroVideo />
-      <ChatbotDemo />
-      <SmartphoneDemo />
-      <div ref={carouselRef}>
-        <Carousel />
-      </div>{" "}
+      {/* <IntroVideo /> */}
+      {/* <ChatbotDemo /> */}
+      {/* <SmartphoneDemo /> */}
+      <Carousel />
       <Partners />
       <FAQ />
       <BlogPreview />

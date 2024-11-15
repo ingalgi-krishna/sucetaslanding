@@ -15,14 +15,15 @@ body {
 }
 
 .component-title {
-  color: var(--purple);
+  color: var(--white);
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 2rem;
 }
 
 /* Product Section Container */
 .product-section {
+  padding: 2rem;
   background-color: var(--black);
   padding: 40px 20px;
   border-radius: 8px;
@@ -40,11 +41,11 @@ body {
 .content-image-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 40px 0;
   padding: 20px;
   border-radius: 10px;
-  background-color: var(--black2);
+  background-color: var(--black);
 }
 
 /* Alternate Row Background */
@@ -55,13 +56,13 @@ body {
 /* Content Section Styling */
 .content {
   flex: 1;
-  padding: 20px;
+  padding: 2rem 5rem;
   color: var(--white);
 }
 
 .content h2 {
-  font-size: 1.6em;
-  color: var(--lavender);
+  font-size: 1.5em;
+  color: var(--purple);
   margin-bottom: 10px;
 }
 
@@ -87,7 +88,7 @@ body {
 
 /* Metrics Section Styling */
 .metrics-section {
-  background-color: var(--lavender);
+  background-color: var(--purple);
   padding: 40px;
   border-radius: 10px;
   text-align: center;
@@ -97,7 +98,7 @@ body {
 
 .metrics-section h2 {
   font-size: 1.8em;
-  color: var(--dark-purple);
+  color: var(--white);
   margin-bottom: 20px;
 }
 

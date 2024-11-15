@@ -129,7 +129,7 @@ const Careers = () => {
             over lively discussions and groundbreaking projects.
           </p>
           <p>
-            You can reach us at <span>careers@yourcompany.com</span>
+            You can reach us at <span>careers@sucetastech.com</span>
           </p>
         </div>
         <div className="careers-form">
@@ -180,7 +180,7 @@ const Careers = () => {
                 hidden
               />
               <label htmlFor="resume" className="file-input-label">
-                <i className="upload-icon"></i> Upload your Resume
+                <i className="upload-icon"></i> <h4>Upload your Resume</h4>
                 <p>Drag and drop files here</p>
               </label>
               {formData.resume ? (
@@ -195,8 +195,8 @@ const Careers = () => {
                 onChange={handleConsentChange}
               />
               <label htmlFor="consent">
-                By checking this box, I consent to receive transactional and
-                marketing text messages regarding employment opportunities.
+                By checking this box, I consent to receive transactional text
+                messages regarding employment opportunities.
               </label>
             </div>
             <button type="submit" disabled={isSubmitting}>

@@ -15,7 +15,7 @@ const blogEntries = [
     id: 2,
     title: "Case Study: AI in Retail",
     category: "CASE STUDY",
-    imageUrl: "ai.jpg",
+    imageUrl: "ai-in-retail-min.jpg",
     description:
       "A detailed look at AI-driven transformations in the retail sector.",
     link: "/resources/case-studies/2",
@@ -24,7 +24,7 @@ const blogEntries = [
     id: 3,
     title: "Innovating with Cloud",
     category: "BLOG",
-    imageUrl: "ai.jpg",
+    imageUrl: "cloud-min.jpg",
     description:
       "How cloud technology is pivotal in driving business innovation.",
     link: "/resources/blogs/3",
@@ -33,7 +33,7 @@ const blogEntries = [
     id: 4,
     title: "Blockchain in Finance",
     category: "CASE STUDY",
-    imageUrl: "ai.jpg",
+    imageUrl: "blockchain-min.jpg",
     description:
       "Discover how blockchain technology is revolutionizing the finance industry.",
     link: "/resources/case-studies/4",

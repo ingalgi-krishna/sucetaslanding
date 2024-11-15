@@ -154,7 +154,12 @@
     flex: 1 1 100%; /* Full width on smaller screens */
     text-align: left;
     width: 100%;
+    padding: 0rem;
     order: 2; /* Newsletter appears at the bottom */
+  }
+
+  .footer-branding h1 p {
+    padding: 0%;
   }
 
   .newsletter {

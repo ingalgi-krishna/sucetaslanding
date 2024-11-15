@@ -7,10 +7,11 @@
 }
 
 .careers-container {
+  padding-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   background-color: #000;
   padding-bottom: 5rem;
 }
@@ -51,6 +52,11 @@
 
 .careers-text {
   width: 50%;
+}
+
+.careers-text h2,
+.careers-form h2 {
+  font-size: 2rem;
 }
 
 .careers-text p {
@@ -95,13 +101,22 @@
 
 .file-input-label i.upload-icon {
   display: block;
-  font-size: 24px; /* Adjust size as necessary */
+  font-size: 2rem; /* Adjust size as necessary */
   margin-bottom: 8px;
 }
 
 .file-input-label p {
+  font-size: 1rem;
   margin-top: 8px;
   color: #666;
+}
+
+.file-input-label h4 {
+  font-size: 1rem;
+  margin-top: 8px;
+  opacity: 0.8;
+  font-weight: 500;
+  color: var(--white);
 }
 
 .file-name {
@@ -196,9 +211,30 @@
 }
 
 @media (max-width: 768px) {
+  .careers-container {
+    padding-bottom: 20px;
+  }
+
+  .careers-banner {
+    font-size: 1rem;
+    height: 30vh;
+  }
+
+  .careers-content {
+    padding: 1rem;
+  }
+
   .careers-text,
   .careers-form {
     width: 100%;
+  }
+
+  .careers-container .careers-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .careers-container .careers-banner p {
+    font-size: 0.8rem;
   }
 
   .careers-content {
@@ -216,5 +252,10 @@
   .careers-form,
   .careers-text {
     padding: 15px;
+  }
+
+  .careers-text h2,
+  .careers-form h2 {
+    font-size: 1.5rem;
   }
 }

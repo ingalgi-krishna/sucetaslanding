@@ -4,7 +4,6 @@ import WebChatbot from "./WebChatbot";
 import WhatsAppBot from "./WhatsAppBot";
 import CallBot from "./CallBot";
 import AnalyticsInsights from "./AnalyticsInsights";
-import MediaPage from "./MediaPage";
 
 const DunefoxProduct = () => {
   // Set up refs for each component section
@@ -22,7 +21,7 @@ const DunefoxProduct = () => {
     <div className="dunefox-product-page">
       <div className="dunefox-banner">
         <h1 className="banner-headline">
-          Looking to Extend Your Business Reach and Engagement?
+          Looking to Expand Your Customer Reach and Engagement!
         </h1>
         <p className="banner-subtitle">Then it's Time to go AI</p>
       </div>
@@ -72,7 +71,6 @@ const DunefoxProduct = () => {
         </div>
       </div>
 
-      {/* Component Sections with Refs */}
       <div ref={webChatbotRef}>
         <WebChatbot />
       </div>

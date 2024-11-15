@@ -10,8 +10,8 @@
 
 /* Title Styling */
 .partners-title {
-  color: var(--purple);
-  font-size: 2em;
+  color: var(--white);
+  font-size: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -58,7 +58,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   /* Further reduce badge size for very small screens */
   .partner-logo-container {
     width: 80px;

@@ -43,10 +43,7 @@ const GetInTouch = () => {
     <div className="get-in-touch-container">
       <div className="contact-banner">
         <h1>Get in Touch</h1>
-        <p>
-          Ready to reach out? Drop us a line and let’s start something great
-          together.
-        </p>
+        <p>Drop us a line and let’s start something great together.</p>
       </div>
       <div className="contact">
         <div className="contact-form">

@@ -209,23 +209,30 @@
     height: auto;
   }
 
-  .services-title {
+  .carousel-container .services-title {
     text-align: center;
     font-size: 2rem;
+    padding: 1rem;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 580px) {
   .badge-wrapper {
     padding: 10px;
   }
 
   .badge {
-    height: auto; /* Responsive height */
+    height: 350px; /* Responsive height */
   }
 
   .badge-image {
     height: 150px; /* Fixed height for consistency */
+  }
+
+  .carousel-container .services-title {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 
   .left-pane h1,
@@ -234,7 +241,7 @@
   .badge-title h3,
   .badge-description p,
   .discover-link {
-    font-size: smaller; /* Adjust for smaller screens */
+    font-size: 1.2rem; /* Adjust for smaller screens */
   }
 
   .slick-prev,

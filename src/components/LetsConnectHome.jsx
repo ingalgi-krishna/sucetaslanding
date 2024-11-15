@@ -41,10 +41,10 @@ const GetInTouch = () => {
 
   return (
     <div className="get-in-touch-container">
-      <h1>
+      <h2 className="title">
         Ready to reach out? Drop us a line and let’s start something great
         together.
-      </h1>
+      </h2>
       <div className="contact">
         <div className="contact-form">
           <h2>Contact Us</h2>
