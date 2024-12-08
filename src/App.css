@@ -6,3 +6,7 @@
   max-width: 100%; /* Prevent horizontal overflow */
   overflow-x: hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}

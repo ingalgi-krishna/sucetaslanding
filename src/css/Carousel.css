@@ -58,6 +58,7 @@
   color: var(--white);
   cursor: pointer;
   font-weight: 600;
+  transition: background-color 0.2s ease;
 }
 
 .explore-button:hover {
@@ -73,9 +74,10 @@
 
 .badge-wrapper {
   display: flex;
-  align-items: stretch; /* Ensure badges have equal height */
+  align-items: stretch;
   padding: 1.5rem;
-  width: 100%; /* Full width to contain badges */
+  width: 100%;
+  will-change: transform;
 }
 
 .badge {
@@ -88,6 +90,12 @@
   height: 400px;
   padding: 20px;
   border-radius: 10px;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+.badge:hover {
+  transform: translateY(-5px);
 }
 
 .badge-image-container,
@@ -103,18 +111,20 @@
 .badge-image {
   max-width: 100%;
   max-height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .badge-title h3,
 .badge-description p {
   font-size: 1rem;
-  width: 100%; /* Full width text */
+  width: 100%;
   text-align: center;
 }
 
 .badge-description p {
   font-size: 1rem;
-  width: 100%; /* Full width text */
+  width: 100%;
   text-align: center;
 }
 
@@ -123,44 +133,57 @@
   color: var(--purple);
   font-weight: 700;
   text-decoration: none;
+  transition: border-bottom 0.2s ease;
+  padding-bottom: 2px;
 }
 
 .discover-link:hover {
   border-bottom: 2px solid var(--lavender);
 }
 
-/* Slick Navigation Arrows */
-.slick-prev,
-.slick-next {
-  display: flex;
+/* Custom Arrow Styling */
+.custom-arrow {
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  background: var(--purple); /* Primary theme color */
-  color: var(--white); /* Text color */
+  background: var(--purple) !important;
+  color: var(--white);
   border: none;
   width: 40px;
   height: 80px;
   text-align: center;
   line-height: 30px;
-  font-size: 5rem;
   border-radius: 5px;
   opacity: 0.9;
-  transition: opacity 0.3s ease;
-}
-
-.slick-prev {
-  left: -20px; /* Margin from the left side */
+  transition: all 0.2s ease;
   z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.slick-next {
-  right: -20px; /* Margin from the right side */
-  z-index: 1;
+.custom-arrow:before {
+  display: none !important;
 }
 
-.slick-prev:hover,
-.slick-next:hover {
-  opacity: 1; /* Full opacity on hover */
+.prev-arrow {
+  left: -20px;
+}
+
+.next-arrow {
+  right: -20px;
+}
+
+.custom-arrow:hover {
+  opacity: 1;
+  background: var(--dark-purple) !important;
+}
+
+/* Hide default slick arrows */
+.slick-prev:before,
+.slick-next:before {
+  display: none !important;
 }
 
 /* Slick Dots Styling */
@@ -168,28 +191,44 @@
   position: relative;
   bottom: -20px;
   width: 100%;
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .slick-dots li {
   display: inline-block;
   margin: 0 5px;
+  padding: 0;
+}
+
+.slick-dots li button {
+  background: var(--lavender);
+  border: none;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  font-size: 0;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .slick-dots li button:before {
-  font-size: 8px;
-  color: var(--lavender);
-  opacity: 0.8;
+  display: none;
 }
 
-.slick-dots li.slick-active button:before {
+.slick-dots li.slick-active button {
   opacity: 1;
-  color: var(--white);
+  background: var(--white);
+  transform: scale(1.2);
 }
 
-/* Responsive adjustments for better layout on mobile and tablets */
+/* Responsive adjustments */
 @media screen and (max-width: 1024px) {
   .left-pane,
   .right-pane {
@@ -202,7 +241,7 @@
   }
 
   .right-pane {
-    order: -1; /* Carousel above text content */
+    order: -1;
   }
 
   .carousel-container {
@@ -222,11 +261,11 @@
   }
 
   .badge {
-    height: 350px; /* Responsive height */
+    height: 350px;
   }
 
   .badge-image {
-    height: 150px; /* Fixed height for consistency */
+    height: 150px;
   }
 
   .carousel-container .services-title {
@@ -241,19 +280,19 @@
   .badge-title h3,
   .badge-description p,
   .discover-link {
-    font-size: 1.2rem; /* Adjust for smaller screens */
+    font-size: 1.2rem;
   }
 
-  .slick-prev,
-  .slick-next {
+  .custom-arrow {
     width: 30px;
     height: 30px;
     padding: 5px;
   }
 }
+
 @media (max-width: 768px) {
-  .slick-prev,
-  .slick-next {
-    top: -40px; /* Position above the carousel */
+  .custom-arrow {
+    top: -40px;
+    transform: none;
   }
 }

@@ -6,10 +6,10 @@ const Partners = () => {
     { name: "Gemini", logo: "Gemini.png" }, // Local path for Gemini logo
     { name: "Groq", logo: "GroqLogo_Black.svg" }, // Local path for Groq logo
     { name: "OpenAI", logo: "OpenAI.png" }, // Local path for OpenAI logo
-    { name: "Meta", logo: "Meta.png" }, // Local path for Meta logo
+    { name: "Meta", logo: "Meta.svg" }, // Local path for Meta logo
     {
       name: "AWS",
-      logo: "AWS.png",
+      logo: "https://d0.awsstatic.com/logos/powered-by-aws.png",
     },
     { name: "MongoDB", logo: "MongoDB.png" }, // Local path for MongoDB logo
   ];

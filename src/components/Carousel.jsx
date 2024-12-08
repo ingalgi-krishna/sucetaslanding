@@ -1,86 +1,51 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { NextArrow, PrevArrow } from "./CarouselArrows";
+import ServiceCard from "./ServiceCard";
+import { services } from "./Services";
 import "../css/Carousel.css";
 
 const Carousel = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          arrows: false,
-          slidesToShow: 2,
-          slidesToScroll: 1,
+  const settings = useMemo(
+    () => ({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+      cssEase: "cubic-bezier(0.4, 0, 0.2, 1)",
+      useCSS: true,
+      useTransform: true,
+      lazyLoad: "progressive",
+      swipeToSlide: true,
+      touchThreshold: 10,
+      waitForAnimate: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
         },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          arrows: false,
-          slidesToScroll: 1,
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            arrows: false,
+            slidesToScroll: 1,
+          },
         },
-      },
-    ],
-  };
-
-  const services = [
-    {
-      image: "QA-chatbot-min.jpg",
-      title: "Q/A Chatbot for Websites",
-      description:
-        "Enhance site engagement with our smart Q/A chatbot solutions.",
-      link: "/qa-chatbot",
-    },
-    {
-      image: "chatbot-website-min.jpg",
-      title: "Chatbot Solutions",
-      description: "Transform customer interactions with AI-driven chatbots.",
-      link: "/chatbot-solutions",
-    },
-    {
-      image: "whatsapp-appointment-min.jpg",
-      title: "Appointment Bookings",
-      description:
-        "Streamline scheduling with our advanced booking solutions available on WhatsApp.",
-      link: "/appointment-bookings",
-    },
-    {
-      image: "product-promotion-min.jpg",
-      title: "Product Promotion and Leads",
-      description: "Drive sales and generate leads with targeted campaigns.",
-      link: "/product-promotion",
-    },
-    {
-      image: "information-awareness-min.jpg",
-      title: "Information Awareness and Alerts",
-      description: "Keep clients informed with automated alerts and updates.",
-      link: "/information-alerts",
-    },
-    {
-      image: "business-analytics-min.jpg",
-      title: "Business Analytics",
-      description:
-        "Leverage data to gain strategic insights and drive informed decision-making.",
-      link: "/business-analytics",
-    },
-    {
-      image: "growth-min.jpg",
-      title: "Business Growth",
-      description: "Insights to fuel your business growth and efficiency.",
-      link: "/business-growth",
-    },
-  ];
+      ],
+    }),
+    []
+  );
 
   return (
     <div className="carousel-container">
@@ -99,28 +64,7 @@ const Carousel = () => {
         <div className="right-pane">
           <Slider {...settings}>
             {services.map((service, index) => (
-              <div key={index} className="badge-wrapper">
-                <div className="badge">
-                  <div className="badge-image-container">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="badge-image"
-                    />
-                  </div>
-                  <div className="badge-title">
-                    <h3>{service.title}</h3>
-                  </div>
-                  <div className="badge-description">
-                    <p>{service.description}</p>
-                  </div>
-                  <div className="badge-link">
-                    <a href={service.link} className="discover-link">
-                      Learn More
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <ServiceCard key={index} {...service} />
             ))}
           </Slider>
         </div>
@@ -129,16 +73,4 @@ const Carousel = () => {
   );
 };
 
-// Custom Next Arrow
-const SampleNextArrow = (props) => {
-  const { className, onClick } = props;
-  return <div className={className} onClick={onClick} />;
-};
-
-// Custom Previous Arrow
-const SamplePrevArrow = (props) => {
-  const { className, onClick } = props;
-  return <div className={className} onClick={onClick} />;
-};
-
-export default Carousel;
+export default React.memo(Carousel);
